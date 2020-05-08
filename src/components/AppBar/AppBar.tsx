@@ -4,14 +4,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Logo from '../Logo';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 const AppBar = () => (
   <Router>
@@ -33,17 +26,6 @@ const AppBar = () => (
           </Grid>
         </Grid>
       </Toolbar>
-      <Switch>
-        <Route path="/login">
-          <div> Дратути! </div>
-        </Route>
-        <Route path="/register"></Route>
-        <Route path="/logout"></Route>
-        <Route path="/tasks"></Route>
-        <Route path="/goals"></Route>
-        <Route path="/goals/add"></Route>
-        <Route path="/"></Route>
-      </Switch>
     </MuiAppBar>
   </Router>
 );

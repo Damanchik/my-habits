@@ -5,7 +5,7 @@ import AppBar from './components/AppBar';
 import theme from './components/theme';
 import HomePage from './pages/home';
 
-const App = () => (
+const MainPage = () => (
   <ThemeProvider theme={theme}>
     <CssBaseline />
     <AppBar />
@@ -13,4 +13,4 @@ const App = () => (
   </ThemeProvider>
 );
 
-export default App;
+export default MainPage;
