@@ -1,8 +1,16 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
+import { Link } from 'react-router-dom';
 
 const LoginPage = () => {
-  return <div>Login Page</div>;
+  return (
+    <div>
+      Login Page
+      <Link to="/register" color="inherit">
+        Регистрация
+      </Link>
+      <Link to="/">Домой</Link>
+    </div>
+  );
 };
 
 export default LoginPage;

@@ -4,7 +4,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Logo from '../Logo';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Link, Switch } from 'react-router-dom';
 
 const AppBar = () => (
   <Router>
@@ -16,9 +17,7 @@ const AppBar = () => (
           </Grid>
           <Grid item>
             <Box pr={1} component="span">
-              <Link to="/login" color="inherit">
-                Войти
-              </Link>
+              <Link to="/login">Войти</Link>
             </Box>
             <Link to="/register" color="inherit">
               Регистрация
