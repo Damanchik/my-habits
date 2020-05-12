@@ -3,8 +3,21 @@ import MuiAppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import { Link } from 'react-router-dom';
 import Logo from '../Logo';
+import {
+  Link as RouterLink,
+  LinkProps as RouterLinkProps,
+} from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+import { Omit } from '@material-ui/types';
+
+const LinkToLogin = React.forwardRef<any, Omit<RouterLinkProps, 'to'>>(
+  (props, ref) => <RouterLink ref={ref} to="/login" {...props} />
+);
+
+const LinkToRegistr = React.forwardRef<any, Omit<RouterLinkProps, 'to'>>(
+  (props, ref) => <RouterLink ref={ref} to="/register" {...props} />
+);
 
 const AppBar = () => (
   <MuiAppBar position="static" color="primary">
@@ -15,11 +28,9 @@ const AppBar = () => (
         </Grid>
         <Grid item>
           <Box pr={1} component="span">
-            <Link to="/login">Войти</Link>
+            <Button component={LinkToLogin}>Войти</Button>
+            <Button component={LinkToRegistr}>Регистрация</Button>
           </Box>
-          <Link to="/register" color="inherit">
-            Регистрация
-          </Link>
         </Grid>
       </Grid>
     </Toolbar>
