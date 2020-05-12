@@ -3,7 +3,7 @@ import MuiAppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import Link from '@material-ui/core/Link';
+import { Link } from 'react-router-dom';
 import Logo from '../Logo';
 
 const AppBar = () => (
@@ -15,11 +15,9 @@ const AppBar = () => (
         </Grid>
         <Grid item>
           <Box pr={1} component="span">
-            <Link href="#foo" color="inherit">
-              Войти
-            </Link>
+            <Link to="/login">Войти</Link>
           </Box>
-          <Link href="#foo" color="inherit">
+          <Link to="/register" color="inherit">
             Регистрация
           </Link>
         </Grid>
