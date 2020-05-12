@@ -29,8 +29,8 @@ const AppBar = () => (
         <Grid item>
           <Box pr={1} component="span">
             <Button component={LinkToLogin}>Войти</Button>
-            <Button component={LinkToRegistr}>Регистрация</Button>
           </Box>
+          <Button component={LinkToRegistr}>Регистрация</Button>
         </Grid>
       </Grid>
     </Toolbar>
