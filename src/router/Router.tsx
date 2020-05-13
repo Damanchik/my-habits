@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import HomePage from '../pages/home';
-import LoginPage from '../components/LoginPage';
-import RegistrationPage from '../components/RegistrationPage';
+import LoginPage from '../pages/LoginPage';
+import RegistrationPage from '../pages/RegistrationPage';
 
 // @ts-ignore
 const Router = ({ navbar: NavBar }) => (

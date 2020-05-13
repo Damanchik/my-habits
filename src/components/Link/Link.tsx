@@ -7,13 +7,9 @@ interface LinkProps {
   label: string;
 }
 
-const styles = {
-  color: 'white',
-};
-
 const Link = ({ label, to }: LinkProps) => {
   return (
-    <MuiLink component={RouterLink} to={to} style={styles}>
+    <MuiLink component={RouterLink} to={to} color="inherit">
       {label}
     </MuiLink>
   );
