@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import HomePage from '../pages/home';
 import LoginPage from '../components/LoginPage';
-import Registration from '../components/Registration';
+import RegistrationPage from '../components/RegistrationPage';
 
 // @ts-ignore
 const Router = ({ navbar: NavBar }) => (
@@ -16,7 +16,7 @@ const Router = ({ navbar: NavBar }) => (
         <LoginPage />
       </Route>
       <Route path="/registration">
-        <Registration />
+        <RegistrationPage />
       </Route>
       <Route path="/logout">
         <div>LogOut</div>
@@ -25,7 +25,7 @@ const Router = ({ navbar: NavBar }) => (
         <div>Tasks</div>
       </Route>
       <Route path="/goals/add">
-        <div>Add goals</div>
+        <div>Add goals</div>ç
       </Route>
       <Route path="/goals">
         <div>Goals</div>
