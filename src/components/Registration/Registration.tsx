@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const LoginPage = () => {
+const Registration = () => {
   return (
     <div>
-      Login Page
-      <Link to="/registration" color="inherit">
-        Регистрация
+      Registration Page
+      <Link to="/login" color="inherit">
+        логин
       </Link>
       <Link to="/">Домой</Link>
     </div>
   );
 };
 
-export default LoginPage;
+export default Registration;
