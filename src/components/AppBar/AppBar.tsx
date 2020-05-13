@@ -4,7 +4,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Logo from '../Logo';
-import LinkTo from '../LinkTo';
+import Link from '../Link';
 
 const AppBar = () => (
   <MuiAppBar position="static" color="primary">
@@ -16,9 +16,9 @@ const AppBar = () => (
         <Toolbar>
           <Grid container>
             <Box pr={1} component="span">
-              <LinkTo LinkName="Войти" path="/login" />
+              <Link label="Войти" to="/login" />
             </Box>
-            <LinkTo LinkName="Зарегистрироваться" path="/registration" />
+            <Link label="Зарегистрироваться" to="/registration" />
           </Grid>
         </Toolbar>
       </Grid>
