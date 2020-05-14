@@ -1,3 +1,4 @@
+//* Черновая страница для проверки работоспособности react-router
 import React from 'react';
 import { Link } from 'react-router-dom';
 

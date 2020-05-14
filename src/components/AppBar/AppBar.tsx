@@ -13,14 +13,12 @@ const AppBar = () => (
         <Grid item>
           <Logo />
         </Grid>
-        <Toolbar>
-          <Grid container>
-            <Box pr={1} component="span">
-              <Link label="Войти" to="/login" />
-            </Box>
-            <Link label="Зарегистрироваться" to="/registration" />
-          </Grid>
-        </Toolbar>
+        <Grid item>
+          <Box pr={1} component="span">
+            <Link label="Войти" to="/login" />
+          </Box>
+          <Link label="Зарегистрироваться" to="/registration" />
+        </Grid>
       </Grid>
     </Toolbar>
   </MuiAppBar>
