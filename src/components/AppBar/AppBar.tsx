@@ -4,24 +4,33 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Logo from '../Logo';
+import { ThemeProvider } from '@material-ui/core/styles';
 import Link from '../Link';
+import theme from '../theme';
 
+// @ts-ignore
 const AppBar = () => (
-  <MuiAppBar position="static" color="primary">
-    <Toolbar>
-      <Grid container justify="space-between" alignItems="center">
-        <Grid item>
-          <Logo />
+  <ThemeProvider theme={theme}>
+    <MuiAppBar position="static" color="primary">
+      <Toolbar>
+        <Grid container justify="space-between" alignItems="center">
+          <Grid item>
+            <Logo />
+          </Grid>
+          <Grid item>
+            <Box pr={1} component="span">
+              <Link label="Войти" to="/login" color="secondary" />
+            </Box>
+            <Link
+              label="Зарегистрироваться"
+              to="/registration"
+              color="secondary"
+            />
+          </Grid>
         </Grid>
-        <Grid item>
-          <Box pr={1} component="span">
-            <Link label="Войти" to="/login" />
-          </Box>
-          <Link label="Зарегистрироваться" to="/registration" />
-        </Grid>
-      </Grid>
-    </Toolbar>
-  </MuiAppBar>
+      </Toolbar>
+    </MuiAppBar>
+  </ThemeProvider>
 );
 
 export default AppBar;

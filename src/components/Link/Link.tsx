@@ -5,11 +5,12 @@ import { Link as RouterLink } from 'react-router-dom';
 interface LinkProps {
   to: string;
   label: string;
+  color: any;
 }
 
-const Link = ({ label, to }: LinkProps) => {
+const Link = ({ label, to, color }: LinkProps) => {
   return (
-    <MuiLink component={RouterLink} to={to} color="inherit">
+    <MuiLink component={RouterLink} to={to} color={color}>
       {label}
     </MuiLink>
   );
