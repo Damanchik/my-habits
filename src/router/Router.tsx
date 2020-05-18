@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import HomePage from '../pages/home';
-import LoginPage from '../components/LoginPage';
+import LoginPage from '../pages/login';
+import RegistrationPage from '../pages/registration';
 
 // @ts-ignore
 const Router = ({ navbar: NavBar }) => (
@@ -14,8 +15,8 @@ const Router = ({ navbar: NavBar }) => (
       <Route path="/login">
         <LoginPage />
       </Route>
-      <Route path="/register">
-        <div>Register</div>
+      <Route path="/registration">
+        <RegistrationPage />
       </Route>
       <Route path="/logout">
         <div>LogOut</div>
