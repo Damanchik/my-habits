@@ -49,7 +49,6 @@ const RegistrationPage = () => {
             }}
           >
             <TextField
-              color="primary"
               name="firstName"
               variant="outlined"
               label="Ваше имя"
@@ -97,7 +96,7 @@ const RegistrationPage = () => {
                 required: 'Вам нужно придумать пароль',
                 minLength: {
                   value: 5,
-                  message: 'Пароль должен включать 5 символов',
+                  message: 'Пароль должен включать не менее 5 символов',
                 },
               })}
             />
@@ -130,7 +129,7 @@ const RegistrationPage = () => {
               </span>
             )}
           </Box>
-          <Button type="submit" variant="outlined" color="primary">
+          <Button type="submit" variant="outlined" color="primary" size="large">
             Создать аккаунт
           </Button>
         </Grid>

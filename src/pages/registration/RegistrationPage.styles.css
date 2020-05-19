@@ -1,5 +1,7 @@
 .registrationBackground {
   height: calc(100% - 64px);
+  /*
   background: url('home_page_blur.jpg');
+   */
   background-size: cover;
 }
