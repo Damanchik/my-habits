@@ -44,7 +44,7 @@ const RegistrationPage = () => {
             component="div"
             style={{
               background: 'none',
-              width: '190px',
+              width: '290px',
               height: '70px',
             }}
           >
@@ -59,6 +59,9 @@ const RegistrationPage = () => {
                   message: 'Минимум 3 символа',
                 },
               })}
+              style={{
+                width: '290px',
+              }}
             />
             {errors.firstName && (
               <span style={{ color: 'red' }}>{errors.firstName.message}</span>
@@ -68,7 +71,7 @@ const RegistrationPage = () => {
             component="div"
             style={{
               background: 'none',
-              width: '190px',
+              width: '290px',
               height: '70px',
             }}
           >
@@ -79,6 +82,9 @@ const RegistrationPage = () => {
               inputRef={register({
                 required: 'Введите ваше email',
               })}
+              style={{
+                width: '290px',
+              }}
             />
             {errors.email && (
               <span style={{ color: 'red' }}>{errors.email.message}</span>
@@ -88,7 +94,7 @@ const RegistrationPage = () => {
             component="div"
             style={{
               background: 'none',
-              width: '190px',
+              width: '290px',
               height: '70px',
             }}
           >
@@ -104,6 +110,9 @@ const RegistrationPage = () => {
                   message: 'Пароль должен включать не менее 5 символов',
                 },
               })}
+              style={{
+                width: '290px',
+              }}
             />
             {errors.password && (
               <span style={{ color: 'red' }}>{errors.password.message}</span>
@@ -113,7 +122,7 @@ const RegistrationPage = () => {
             component="div"
             style={{
               background: 'none',
-              width: '190px',
+              width: '290px',
               height: '70px',
             }}
           >
@@ -127,6 +136,9 @@ const RegistrationPage = () => {
                 validate: value =>
                   value === password.current || 'Пароль не совпадает',
               })}
+              style={{
+                width: '290px',
+              }}
             />
             {errors.passwordRepeat && (
               <span style={{ color: 'red' }}>
