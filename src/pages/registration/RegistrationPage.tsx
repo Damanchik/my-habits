@@ -73,11 +73,16 @@ const RegistrationPage = () => {
             }}
           >
             <TextField
-              name="secondName"
+              name="email"
               variant="outlined"
-              label="Ваша фамилия"
-              inputRef={register}
+              label="Ваш email"
+              inputRef={register({
+                required: 'Введите ваше email',
+              })}
             />
+            {errors.email && (
+              <span style={{ color: 'red' }}>{errors.email.message}</span>
+            )}
           </Box>
           <Box
             component="div"
