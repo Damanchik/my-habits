@@ -4,10 +4,11 @@ import { useForm } from 'react-hook-form';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import './RegistrationPage.styles.css';
 import Box from '@material-ui/core/Box';
+import useStyles from './RegistrationPage.styles';
 
 const RegistrationPage = () => {
+  const classes = useStyles();
   const methods = useForm();
   const { handleSubmit, register, errors, watch } = methods;
   const onSubmit = (data: any) => console.log(data);
@@ -19,35 +20,20 @@ const RegistrationPage = () => {
       container
       justify="center"
       alignItems="center"
-      className="registrationBackground"
+      className={classes.registrationBackground}
     >
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        style={{
-          background: 'none',
-          width: 'auto',
-          height: '60vh',
-          minHeight: '550px',
-        }}
-      >
+      <form onSubmit={handleSubmit(onSubmit)} className={classes.formStyle}>
         <Grid
           container
           direction="column"
           justify="space-between"
           alignItems="center"
-          style={{ height: '100%', width: '100%' }}
+          className={classes.gridStyle}
         >
           <Typography align="center" variant="h4" color="primary">
             Регистрация
           </Typography>
-          <Box
-            component="div"
-            style={{
-              background: 'none',
-              width: '290px',
-              height: '70px',
-            }}
-          >
+          <Box className={classes.boxStyle}>
             <TextField
               name="firstName"
               variant="outlined"
@@ -59,22 +45,15 @@ const RegistrationPage = () => {
                   message: 'Минимум 3 символа',
                 },
               })}
-              style={{
-                width: '290px',
-              }}
+              className={classes.textFieldStyle}
             />
             {errors.firstName && (
-              <span style={{ color: 'red' }}>{errors.firstName.message}</span>
+              <span className={classes.errorStyle}>
+                {errors.firstName.message}
+              </span>
             )}
           </Box>
-          <Box
-            component="div"
-            style={{
-              background: 'none',
-              width: '290px',
-              height: '70px',
-            }}
-          >
+          <Box className={classes.boxStyle}>
             <TextField
               name="email"
               variant="outlined"
@@ -82,22 +61,13 @@ const RegistrationPage = () => {
               inputRef={register({
                 required: 'Введите ваше email',
               })}
-              style={{
-                width: '290px',
-              }}
+              className={classes.textFieldStyle}
             />
             {errors.email && (
-              <span style={{ color: 'red' }}>{errors.email.message}</span>
+              <span className={classes.errorStyle}>{errors.email.message}</span>
             )}
           </Box>
-          <Box
-            component="div"
-            style={{
-              background: 'none',
-              width: '290px',
-              height: '70px',
-            }}
-          >
+          <Box className={classes.boxStyle}>
             <TextField
               name="password"
               variant="outlined"
@@ -110,22 +80,15 @@ const RegistrationPage = () => {
                   message: 'Пароль должен включать не менее 5 символов',
                 },
               })}
-              style={{
-                width: '290px',
-              }}
+              className={classes.textFieldStyle}
             />
             {errors.password && (
-              <span style={{ color: 'red' }}>{errors.password.message}</span>
+              <span className={classes.errorStyle}>
+                {errors.password.message}
+              </span>
             )}
           </Box>
-          <Box
-            component="div"
-            style={{
-              background: 'none',
-              width: '290px',
-              height: '70px',
-            }}
-          >
+          <Box className={classes.boxStyle}>
             <TextField
               name="passwordRepeat"
               variant="outlined"
@@ -136,12 +99,10 @@ const RegistrationPage = () => {
                 validate: value =>
                   value === password.current || 'Пароль не совпадает',
               })}
-              style={{
-                width: '290px',
-              }}
+              className={classes.textFieldStyle}
             />
             {errors.passwordRepeat && (
-              <span style={{ color: 'red' }}>
+              <span className={classes.errorStyle}>
                 {errors.passwordRepeat.message}
               </span>
             )}
