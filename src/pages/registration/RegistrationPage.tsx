@@ -24,94 +24,86 @@ const RegistrationPage = () => {
     >
       <Grid item xs={7} sm={4} lg={3}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <Typography align="center" variant="h4" color="primary">
-            Регистрация
-          </Typography>
-          <Box mt={5} height={85}>
-            <TextField
-              fullWidth
-              name="firstName"
-              variant="outlined"
-              label="Ваше имя"
-              inputRef={register({
-                required: 'Введите ваше имя',
-                minLength: {
-                  value: 3,
-                  message: 'Минимум 3 символа',
-                },
-              })}
-            />
-            {errors.firstName && (
-              <Typography color="error" variant="body2">
-                {errors.firstName.message}
+          <Box height={500}>
+            <Grid
+              container
+              direction="column"
+              justify="space-around"
+              className={classes.grid}
+            >
+              <Typography align="center" variant="h4" color="primary">
+                Регистрация
               </Typography>
-            )}
+              <TextField
+                name="firstName"
+                variant="outlined"
+                label="Ваше имя"
+                inputRef={register({
+                  required: 'Введите ваше имя',
+                  minLength: {
+                    value: 3,
+                    message: 'Минимум 3 символа',
+                  },
+                })}
+                error={!!errors.firstName}
+                helperText={errors.firstName && errors.firstName.message}
+                fullWidth
+              />
+              <TextField
+                name="email"
+                variant="outlined"
+                label="Ваш email"
+                inputRef={register({
+                  required: 'Введите ваше email',
+                })}
+                error={!!errors.email}
+                helperText={errors.email && errors.email.message}
+                fullWidth
+              />
+              <TextField
+                name="password"
+                variant="outlined"
+                label="Придумайте пароль"
+                type="password"
+                inputRef={register({
+                  required: 'Вам нужно придумать пароль',
+                  minLength: {
+                    value: 5,
+                    message: 'Пароль должен включать не менее 5 символов',
+                  },
+                })}
+                error={!!errors.password}
+                helperText={errors.password && errors.password.message}
+                fullWidth
+              />
+              <TextField
+                name="passwordRepeat"
+                variant="outlined"
+                type="password"
+                label="Повторите пароль"
+                color="primary"
+                inputRef={register({
+                  validate: value =>
+                    value === password.current || 'Пароль не совпадает',
+                })}
+                error={!!errors.passwordRepeat}
+                helperText={
+                  errors.passwordRepeat && errors.passwordRepeat.message
+                }
+                fullWidth
+              />
+
+              <Button
+                fullWidth
+                type="submit"
+                variant="outlined"
+                color="primary"
+                size="large"
+              >
+                Создать аккаунт
+              </Button>
+            </Grid>
           </Box>
-          <Box mt={2} height={85}>
-            <TextField
-              fullWidth
-              name="email"
-              variant="outlined"
-              label="Ваш email"
-              inputRef={register({
-                required: 'Введите ваше email',
-              })}
-            />
-            {errors.email && (
-              <Typography color="error" variant="body2">
-                {errors.email.message}
-              </Typography>
-            )}
-          </Box>
-          <Box mt={2} height={70}>
-            <TextField
-              fullWidth
-              name="password"
-              variant="outlined"
-              label="Придумайте пароль"
-              type="password"
-              inputRef={register({
-                required: 'Вам нужно придумать пароль',
-                minLength: {
-                  value: 5,
-                  message: 'Пароль должен включать не менее 5 символов',
-                },
-              })}
-            />
-            {errors.password && (
-              <Typography color="error" variant="body2">
-                {errors.password.message}
-              </Typography>
-            )}
-          </Box>
-          <Box mt={2} mb={2} height={85}>
-            <TextField
-              fullWidth
-              name="passwordRepeat"
-              variant="outlined"
-              type="password"
-              label="Повторите пароль"
-              color="primary"
-              inputRef={register({
-                validate: value =>
-                  value === password.current || 'Пароль не совпадает',
-              })}
-            />
-            {errors.passwordRepeat && (
-              <Typography color="error" variant="body2">
-                {errors.passwordRepeat.message}
-              </Typography>
-            )}
-          </Box>
-          <Button
-            fullWidth
-            type="submit"
-            variant="outlined"
-            color="primary"
-            size="large"
-          >
-            Создать аккаунт
-          </Button>
         </form>
       </Grid>
     </Grid>

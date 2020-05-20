@@ -6,6 +6,11 @@ const useStyles = makeStyles({
     backgroundSize: 'cover',
     background: 'none',
   },
+
+  grid: {
+    background: 'none',
+    height: '100%',
+  },
 });
 
 export default useStyles;
