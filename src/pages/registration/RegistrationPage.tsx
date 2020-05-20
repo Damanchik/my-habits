@@ -22,19 +22,14 @@ const RegistrationPage = () => {
       alignItems="center"
       className={classes.registrationBackground}
     >
-      <form onSubmit={handleSubmit(onSubmit)} className={classes.formStyle}>
-        <Grid
-          container
-          direction="column"
-          justify="space-between"
-          alignItems="center"
-          className={classes.gridStyle}
-        >
+      <Grid item xs={7} sm={4} lg={3}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <Typography align="center" variant="h4" color="primary">
             Регистрация
           </Typography>
-          <Box className={classes.boxStyle}>
+          <Box mt={5} height={85}>
             <TextField
+              fullWidth
               name="firstName"
               variant="outlined"
               label="Ваше имя"
@@ -45,30 +40,32 @@ const RegistrationPage = () => {
                   message: 'Минимум 3 символа',
                 },
               })}
-              className={classes.textFieldStyle}
             />
             {errors.firstName && (
-              <span className={classes.errorStyle}>
+              <Typography color="error" variant="body2">
                 {errors.firstName.message}
-              </span>
+              </Typography>
             )}
           </Box>
-          <Box className={classes.boxStyle}>
+          <Box mt={2} height={85}>
             <TextField
+              fullWidth
               name="email"
               variant="outlined"
               label="Ваш email"
               inputRef={register({
                 required: 'Введите ваше email',
               })}
-              className={classes.textFieldStyle}
             />
             {errors.email && (
-              <span className={classes.errorStyle}>{errors.email.message}</span>
+              <Typography color="error" variant="body2">
+                {errors.email.message}
+              </Typography>
             )}
           </Box>
-          <Box className={classes.boxStyle}>
+          <Box mt={2} height={70}>
             <TextField
+              fullWidth
               name="password"
               variant="outlined"
               label="Придумайте пароль"
@@ -80,16 +77,16 @@ const RegistrationPage = () => {
                   message: 'Пароль должен включать не менее 5 символов',
                 },
               })}
-              className={classes.textFieldStyle}
             />
             {errors.password && (
-              <span className={classes.errorStyle}>
+              <Typography color="error" variant="body2">
                 {errors.password.message}
-              </span>
+              </Typography>
             )}
           </Box>
-          <Box className={classes.boxStyle}>
+          <Box mt={2} mb={2} height={85}>
             <TextField
+              fullWidth
               name="passwordRepeat"
               variant="outlined"
               type="password"
@@ -99,19 +96,24 @@ const RegistrationPage = () => {
                 validate: value =>
                   value === password.current || 'Пароль не совпадает',
               })}
-              className={classes.textFieldStyle}
             />
             {errors.passwordRepeat && (
-              <span className={classes.errorStyle}>
+              <Typography color="error" variant="body2">
                 {errors.passwordRepeat.message}
-              </span>
+              </Typography>
             )}
           </Box>
-          <Button type="submit" variant="outlined" color="primary" size="large">
+          <Button
+            fullWidth
+            type="submit"
+            variant="outlined"
+            color="primary"
+            size="large"
+          >
             Создать аккаунт
           </Button>
-        </Grid>
-      </form>
+        </form>
+      </Grid>
     </Grid>
   );
 };
