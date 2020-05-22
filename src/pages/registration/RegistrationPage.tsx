@@ -16,97 +16,99 @@ const RegistrationPage = () => {
   password.current = watch('password', '');
 
   return (
-    <Grid
-      container
-      justify="center"
-      alignItems="center"
-      className={classes.registrationBackground}
-    >
-      <Grid item xs={7} sm={4} lg={3}>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <Box height={500}>
-            <Grid
-              container
-              direction="column"
-              justify="space-around"
-              className={classes.grid}
+    <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
+      <Grid
+        container
+        direction="column"
+        justify="center"
+        alignItems="center"
+        className={classes.grid}
+      >
+        <Grid item xs={10} sm={8} md={4} lg={3}>
+          <Box className={classes.box}>
+            <Typography align="center" variant="h4" color="primary">
+              Регистрация
+            </Typography>
+            <TextField
+              className={classes.textField}
+              name="firstName"
+              variant="outlined"
+              label="Ваше имя"
+              inputRef={register({
+                required: 'Введите ваше имя',
+                minLength: {
+                  value: 3,
+                  message: 'Минимум 3 символа',
+                },
+              })}
+              error={!!errors.firstName}
+              helperText={errors.firstName && errors.firstName.message}
+              fullWidth
+            />
+            <TextField
+              className={classes.textField}
+              name="email"
+              variant="outlined"
+              label="Ваш email"
+              inputRef={register({
+                required: 'Введите ваше email',
+                pattern: {
+                  value: /[A-Za-z0-9]+@+[A-Za-z]+[.]+[A-Za-z]/,
+                  message: 'Email некорректен',
+                },
+              })}
+              error={!!errors.email}
+              helperText={errors.email && errors.email.message}
+              fullWidth
+            />
+            <TextField
+              className={classes.textField}
+              name="password"
+              variant="outlined"
+              label="Придумайте пароль"
+              type="password"
+              inputRef={register({
+                required: 'Вам нужно придумать пароль',
+                minLength: {
+                  value: 5,
+                  message: 'Пароль должен включать не менее 5 символов',
+                },
+              })}
+              error={!!errors.password}
+              helperText={errors.password && errors.password.message}
+              fullWidth
+            />
+            <TextField
+              className={classes.textField}
+              name="passwordRepeat"
+              variant="outlined"
+              type="password"
+              label="Повторите пароль"
+              color="primary"
+              inputRef={register({
+                validate: value =>
+                  value === password.current || 'Пароль не совпадает',
+              })}
+              error={!!errors.passwordRepeat}
+              helperText={
+                errors.passwordRepeat && errors.passwordRepeat.message
+              }
+              fullWidth
+            />
+            <Button
+              className={classes.button}
+              type="submit"
+              variant="outlined"
+              color="primary"
+              size="large"
+              fullWidth
             >
-              <Typography align="center" variant="h4" color="primary">
-                Регистрация
-              </Typography>
-              <TextField
-                name="firstName"
-                variant="outlined"
-                label="Ваше имя"
-                inputRef={register({
-                  required: 'Введите ваше имя',
-                  minLength: {
-                    value: 3,
-                    message: 'Минимум 3 символа',
-                  },
-                })}
-                error={!!errors.firstName}
-                helperText={errors.firstName && errors.firstName.message}
-                fullWidth
-              />
-              <TextField
-                name="email"
-                variant="outlined"
-                label="Ваш email"
-                inputRef={register({
-                  required: 'Введите ваше email',
-                })}
-                error={!!errors.email}
-                helperText={errors.email && errors.email.message}
-                fullWidth
-              />
-              <TextField
-                name="password"
-                variant="outlined"
-                label="Придумайте пароль"
-                type="password"
-                inputRef={register({
-                  required: 'Вам нужно придумать пароль',
-                  minLength: {
-                    value: 5,
-                    message: 'Пароль должен включать не менее 5 символов',
-                  },
-                })}
-                error={!!errors.password}
-                helperText={errors.password && errors.password.message}
-                fullWidth
-              />
-              <TextField
-                name="passwordRepeat"
-                variant="outlined"
-                type="password"
-                label="Повторите пароль"
-                color="primary"
-                inputRef={register({
-                  validate: value =>
-                    value === password.current || 'Пароль не совпадает',
-                })}
-                error={!!errors.passwordRepeat}
-                helperText={
-                  errors.passwordRepeat && errors.passwordRepeat.message
-                }
-                fullWidth
-              />
-
-              <Button
-                fullWidth
-                type="submit"
-                variant="outlined"
-                color="primary"
-                size="large"
-              >
-                Создать аккаунт
-              </Button>
-            </Grid>
+              Создать аккаунт
+            </Button>
           </Box>
-        </form>
+        </Grid>
       </Grid>
-    </Grid>
+    </form>
   );
 };
 

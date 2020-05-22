@@ -1,16 +1,79 @@
-//* Черновая страница для проверки работоспособности react-router
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Grid from '@material-ui/core/Grid';
+import { useForm } from 'react-hook-form';
+import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import Box from '@material-ui/core/Box';
+import useStyles from './LoginPage.styles';
 
 const LoginPage = () => {
+  const classes = useStyles();
+  const methods = useForm();
+  const { handleSubmit, register, errors } = methods;
+  const onSubmit = (data: any) => console.log(data);
+
   return (
-    <div>
-      Login Page
-      <Link to="/registration" color="inherit">
-        Регистрация
-      </Link>
-      <Link to="/">Домой</Link>
-    </div>
+    <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
+      <Grid
+        container
+        direction="column"
+        justify="center"
+        alignItems="center"
+        className={classes.grid}
+      >
+        <Grid item xs={11} sm={8} md={4} lg={3}>
+          <Box className={classes.box}>
+            <Typography align="center" variant="h4" color="primary">
+              Авторизоваться
+            </Typography>
+            <TextField
+              className={classes.textField}
+              name="email"
+              variant="outlined"
+              label="Ваш email"
+              inputRef={register({
+                required: 'Введите ваше email',
+                pattern: {
+                  value: /[A-Za-z0-9]+@+[A-Za-z]+[.]+[A-Za-z]/,
+                  message: 'Email некорректен',
+                },
+              })}
+              error={!!errors.email}
+              helperText={errors.email && errors.email.message}
+              fullWidth
+            />
+            <TextField
+              className={classes.textField}
+              name="password"
+              variant="outlined"
+              label="Введите пароль"
+              type="password"
+              inputRef={register({
+                required: 'Некорректный логин или email',
+                minLength: {
+                  value: 5,
+                  message: 'Пароль должен включать не менее 5 символов',
+                },
+              })}
+              error={!!errors.password}
+              helperText={errors.password && errors.password.message}
+              fullWidth
+            />
+            <Button
+              className={classes.button}
+              type="submit"
+              variant="outlined"
+              color="primary"
+              size="large"
+              fullWidth
+            >
+              Войти
+            </Button>
+          </Box>
+        </Grid>
+      </Grid>
+    </form>
   );
 };
 
