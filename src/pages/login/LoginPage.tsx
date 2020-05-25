@@ -16,7 +16,7 @@ const LoginPage = () => {
   return (
     <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
       <Grid container direction="column" justify="center" alignItems="center">
-        <Grid item xs={11} sm={8} md={4} lg={3}>
+        <Grid item xs={12} sm={8} md={4} lg={3}>
           <Box className={classes.box}>
             <Typography
               align="center"
@@ -24,7 +24,7 @@ const LoginPage = () => {
               color="primary"
               className={classes.header}
             >
-              Авторизоваться
+              Авторизация
             </Typography>
             <TextField
               className={classes.textField}
@@ -32,7 +32,7 @@ const LoginPage = () => {
               variant="outlined"
               label="Ваш email"
               inputRef={register({
-                required: 'Введите ваше email',
+                required: 'Введите ваш email',
                 pattern: {
                   value: /[A-Za-z0-9]+@+[A-Za-z]+[.]+[A-Za-z]/,
                   message: 'Email некорректен',
@@ -49,7 +49,7 @@ const LoginPage = () => {
               label="Введите пароль"
               type="password"
               inputRef={register({
-                required: 'Некорректный логин или email',
+                required: 'Некорректный пароль или email',
                 minLength: {
                   value: 5,
                   message: 'Пароль должен включать не менее 5 символов',
