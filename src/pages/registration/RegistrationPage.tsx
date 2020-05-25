@@ -53,7 +53,7 @@ const RegistrationPage = () => {
                 required: 'Введите ваш email',
                 pattern: {
                   value: /[A-Za-z0-9]+@+[A-Za-z]+[.]+[A-Za-z]/,
-                  message: 'Email некорректен',
+                  message: 'Некорректный email',
                 },
               })}
               error={!!errors.email}

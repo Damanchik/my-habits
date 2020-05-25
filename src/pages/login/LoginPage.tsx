@@ -35,7 +35,7 @@ const LoginPage = () => {
                 required: 'Введите ваш email',
                 pattern: {
                   value: /[A-Za-z0-9]+@+[A-Za-z]+[.]+[A-Za-z]/,
-                  message: 'Email некорректен',
+                  message: 'Некорректный email',
                 },
               })}
               error={!!errors.email}
@@ -49,7 +49,7 @@ const LoginPage = () => {
               label="Введите пароль"
               type="password"
               inputRef={register({
-                required: 'Некорректный пароль или email',
+                required: 'Некорректный email или пароль',
                 minLength: {
                   value: 5,
                   message: 'Пароль должен включать не менее 5 символов',
