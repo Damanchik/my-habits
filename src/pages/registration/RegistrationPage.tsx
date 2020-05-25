@@ -17,16 +17,15 @@ const RegistrationPage = () => {
 
   return (
     <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
-      <Grid
-        container
-        direction="column"
-        justify="center"
-        alignItems="center"
-        className={classes.grid}
-      >
+      <Grid container direction="column" justify="center" alignItems="center">
         <Grid item xs={10} sm={8} md={4} lg={3}>
           <Box className={classes.box}>
-            <Typography align="center" variant="h4" color="primary">
+            <Typography
+              align="center"
+              variant="h4"
+              color="primary"
+              className={classes.header}
+            >
               Регистрация
             </Typography>
             <TextField
