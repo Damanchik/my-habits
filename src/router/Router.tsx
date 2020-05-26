@@ -22,7 +22,7 @@ const Router = ({ navbar: NavBar }) => (
         <div>LogOut</div>
       </Route>
       <Route path="/tasks">
-        <div>Tasks</div>
+        <div>tasks </div>
       </Route>
       <Route path="/goals/add">
         <div>Add goals</div>
