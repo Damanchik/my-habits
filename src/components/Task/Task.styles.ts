@@ -2,20 +2,21 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 
 export default makeStyles((theme: Theme) =>
   createStyles({
-    gridContainer: {
-      background: 'blue',
+    img: {
+      margin: 'auto',
+      display: 'block',
+      maxWidth: '100%',
+      maxHeight: '100%',
     },
-    box: {
-      background: 'yellow',
-      flexGrow: 1,
+    image: {
+      width: 128,
+      height: 140,
     },
-    box2: {
-      background: 'green',
-      flexGrow: 3,
+    paper: {
       padding: theme.spacing(2),
     },
-    grid: {
-      flexGrow: 2,
+    paperContainer: {
+      margin: theme.spacing(2),
     },
   })
 );
