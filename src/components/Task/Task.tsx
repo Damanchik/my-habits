@@ -22,7 +22,7 @@ const Task = () => {
         <Paper className={classes.paper}>
           <Grid container alignItems="center" spacing={2}>
             <Grid item container justify="center" xs={12} sm={6} md={3} lg={3}>
-              <img className={classes.img} src={runPic} alt="Картинка" />
+              <img src={runPic} alt="Картинка" />
             </Grid>
             <Grid item xs={12} sm container>
               <Grid item xs container direction="column" spacing={2}>
