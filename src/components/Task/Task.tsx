@@ -1,5 +1,4 @@
 import React from 'react';
-import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
@@ -16,16 +15,14 @@ const Task = () => {
         item
         xs={12}
         sm={6}
-        md={5}
+        md={6}
         lg={5}
         className={classes.paperContainer}
       >
         <Paper className={classes.paper}>
           <Grid container alignItems="center" spacing={2}>
-            <Grid item>
-              <Box className={classes.image}>
-                <img className={classes.img} src={runPic} alt="Картинка" />
-              </Box>
+            <Grid item container justify="center" xs={12} sm={6} md={3} lg={3}>
+              <img className={classes.img} src={runPic} alt="Картинка" />
             </Grid>
             <Grid item xs={12} sm container>
               <Grid item xs container direction="column" spacing={2}>
