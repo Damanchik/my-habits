@@ -19,5 +19,14 @@ export default makeStyles((theme: Theme) =>
         marginLeft: drawerWidth,
       },
     },
+    fab: {
+      position: 'fixed',
+      [theme.breakpoints.up('sm')]: {
+        bottom: theme.spacing(4),
+        right: theme.spacing(4),
+      },
+      bottom: theme.spacing(2),
+      right: theme.spacing(2),
+    },
   })
 );

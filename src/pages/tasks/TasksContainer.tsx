@@ -1,8 +1,10 @@
 import React from 'react';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
-import { Drawer } from '@material-ui/core';
+import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
 import Grid from '@material-ui/core/Grid';
 import UseStyles from './TasksContainer.styles';
 import SideBar from '../../components/SideBar/SideBar';
@@ -57,6 +59,9 @@ const TasksContainer = ({ children }: TemplateProps) => {
       >
         {children}
       </Grid>
+      <Fab color="primary" className={classes.fab}>
+        <AddIcon />
+      </Fab>
     </>
   );
 };
