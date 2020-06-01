@@ -22,5 +22,8 @@ export default makeStyles((theme: Theme) =>
     gridAvatar: {
       flexGrow: 1,
     },
+    input: {
+      display: 'none',
+    },
   })
 );
