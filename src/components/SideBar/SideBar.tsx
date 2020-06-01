@@ -1,12 +1,15 @@
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Logo from '../Logo';
 import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
-import React from 'react';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import InboxIcon from '@material-ui/icons/Inbox';
+import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
+import Logo from '../Logo';
 import UseStyles from './SideBar.style';
 
 const SideBar = () => {
@@ -25,11 +28,17 @@ const SideBar = () => {
       <Divider />
       <List className={classes.list}>
         <ListItem button>
+          <ListItemIcon>
+            <InboxIcon />
+          </ListItemIcon>
           <ListItemText>
             <Typography>Задания</Typography>
           </ListItemText>
         </ListItem>
         <ListItem button>
+          <ListItemIcon>
+            <AssignmentTurnedInIcon />
+          </ListItemIcon>
           <ListItemText>
             <Typography>Успехи</Typography>
           </ListItemText>
@@ -44,11 +53,11 @@ const SideBar = () => {
         wrap="wrap"
         className={classes.gridAvatar}
       >
-        <Avatar className={classes.Avatar} src="/static/images/avatar/1.jpg" />
+        <Avatar className={classes.avatar} />
         <Typography
           variant="body1"
           align="center"
-          className={classes.Typography}
+          className={classes.typography}
         >
           Фёдор
         </Typography>

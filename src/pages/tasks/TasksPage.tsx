@@ -7,15 +7,6 @@ const TasksPage = () => {
     <>
       <TasksContainer>
         <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
       </TasksContainer>
     </>
   );

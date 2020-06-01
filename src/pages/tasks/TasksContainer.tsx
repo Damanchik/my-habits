@@ -54,9 +54,6 @@ const TasksContainer = ({ children }: TemplateProps) => {
         container
         justify="space-around"
         className={classes.contentField}
-        xs={12}
-        sm={10}
-        md={10}
       >
         {children}
       </Grid>
