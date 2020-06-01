@@ -6,10 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import CheckIcon from '@material-ui/icons/Check';
 import ErrorIcon from '@material-ui/icons/Error';
 import DoneOutlineIcon from '@material-ui/icons/DoneOutline';
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import MoodBadIcon from '@material-ui/icons/MoodBad';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import UseStyles from './Task.styles';
 import runPic from './Arrow.jpg';
 
@@ -18,52 +15,6 @@ const Task = () => {
   const classes = UseStyles();
   return (
     <>
-      <ExpansionPanel square>
-        <ExpansionPanelSummary
-          aria-controls="panel1d-content"
-          id="panel1d-header"
-        >
-          <Typography variant="h6">Прогулка по улице</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <Grid container justify="flex-start" alignItems="center" spacing={2}>
-            <Grid
-              item
-              container
-              justify="center"
-              alignItems="center"
-              xs={12}
-              sm={2}
-            >
-              <img src={runPic} alt="картинка" />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </Grid>
-            <Grid container item xs={12} sm={4}>
-              <Button fullWidth startIcon={<CheckIcon />}>
-                Выполнено
-              </Button>
-              <Button fullWidth startIcon={<MoodBadIcon />}>
-                Частично
-              </Button>
-              <Button fullWidth startIcon={<DoneOutlineIcon />}>
-                Перевыполнено
-              </Button>
-              <Button fullWidth startIcon={<ErrorIcon />}>
-                Не выполнено
-              </Button>
-            </Grid>
-          </Grid>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
-
       <Grid item xs={12} className={classes.paperContainer}>
         <Paper className={classes.paper}>
           <Grid container justify="flex-start" spacing={1}>
@@ -73,9 +24,14 @@ const Task = () => {
               justify="center"
               alignItems="center"
               xs={12}
-              sm={2}
+              sm={12}
+              md={2}
             >
-              <img src={runPic} alt="картинка" />
+              <img
+                src={runPic}
+                alt="картинка"
+                style={{ height: '100%', objectFit: 'cover' }}
+              />
             </Grid>
             <Grid
               item
@@ -83,7 +39,8 @@ const Task = () => {
               direction="column"
               alignItems="center"
               xs={12}
-              sm={6}
+              sm={12}
+              md={6}
             >
               <Typography gutterBottom variant="h6" align="center">
                 Прогулка по улице
@@ -96,18 +53,33 @@ const Task = () => {
                 eget.
               </Typography>
             </Grid>
-            <Grid container item xs={12} sm={4}>
-              <Button fullWidth startIcon={<CheckIcon />}>
-                Выполнено
+            <Grid container item xs={12} sm={12} md={4}>
+              <Button fullWidth startIcon={<CheckIcon color="primary" />}>
+                <Typography>Выполнено</Typography>
               </Button>
-              <Button fullWidth startIcon={<MoodBadIcon />}>
-                Частично
+              <Button
+                fullWidth
+                startIcon={<MoodBadIcon className={classes.moodBadIcon} />}
+              >
+                <Typography className={classes.partiallyDone}>
+                  Частично
+                </Typography>
               </Button>
-              <Button fullWidth startIcon={<DoneOutlineIcon />}>
-                Перевыполнено
+              <Button
+                fullWidth
+                startIcon={
+                  <DoneOutlineIcon className={classes.doneOutlineIcon} />
+                }
+              >
+                <Typography>Перевыполнено</Typography>
               </Button>
-              <Button fullWidth startIcon={<ErrorIcon />}>
-                Не выполнено
+              <Button
+                fullWidth
+                startIcon={
+                  <ErrorIcon className={classes.ErrorIcon} color="error" />
+                }
+              >
+                <Typography>Не выполнено</Typography>
               </Button>
             </Grid>
           </Grid>

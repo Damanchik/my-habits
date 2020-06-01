@@ -8,5 +8,18 @@ export default makeStyles((theme: Theme) =>
     paperContainer: {
       margin: theme.spacing(2),
     },
+    moodBadIcon: {
+      color: 'yellow',
+    },
+    partiallyDone: {
+      marginRight: 20,
+    },
+    doneOutlineIcon: {
+      marginLeft: 40,
+      color: 'green',
+    },
+    ErrorIcon: {
+      marginLeft: 20,
+    },
   })
 );
