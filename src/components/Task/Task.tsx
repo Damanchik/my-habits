@@ -1,18 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
-import CheckIcon from '@material-ui/icons/Check';
-import ErrorIcon from '@material-ui/icons/Error';
-import DoneOutlineIcon from '@material-ui/icons/DoneOutline';
-import MoodBadIcon from '@material-ui/icons/MoodBad';
+import Collapse from '@material-ui/core/Collapse';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 import UseStyles from './Task.styles';
-import runPic from './Arrow.jpg';
+import TaskButton from '../TaskButton/TaskButtons';
 
 // @ts-ignore
-const Task = () => {
+const Task = ({ description, name }) => {
   const classes = UseStyles();
+  const [checked, setChecked] = useState(false);
+  const handleChange = () => {
+    setChecked(prev => !prev);
+  };
+  const handleText = () => {
+    if (!checked) {
+      return <Typography variant="caption">Показать</Typography>;
+    }
+    return <Typography variant="caption">Скрыть</Typography>;
+  };
+
   return (
     <>
       <Grid item xs={12} className={classes.paperContainer}>
@@ -22,61 +31,56 @@ const Task = () => {
               item
               container
               justify="center"
-              alignItems="center"
+              alignItems="flex-start"
               xs={12}
               sm={12}
               md={2}
             >
-              <img src={runPic} alt="картинка" className={classes.img} />
+              <img
+                src="http://placekitten.com/600/900"
+                alt="картинка"
+                className={classes.img}
+              />
             </Grid>
-            <Grid
-              item
-              container
-              direction="column"
-              alignItems="center"
-              xs={12}
-              sm={12}
-              md={6}
-            >
+            <Grid item container direction="column" xs={12} sm={12} md={6}>
               <Typography gutterBottom variant="h6" align="center">
-                Прогулка по улице
+                {name}
               </Typography>
-              <Typography variant="body1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </Grid>
-            <Grid container item xs={12} sm={12} md={4}>
-              <Button fullWidth startIcon={<CheckIcon color="primary" />}>
-                <Typography>Выполнено</Typography>
-              </Button>
-              <Button
-                fullWidth
-                startIcon={<MoodBadIcon className={classes.moodBadIcon} />}
-              >
-                <Typography className={classes.partiallyDone}>
-                  Частично
+              <Collapse in={checked} collapsedHeight={75}>
+                <Typography
+                  id="description"
+                  variant="body1"
+                  align="center"
+                  className={classes.typographyDescription}
+                >
+                  {description}
                 </Typography>
-              </Button>
-              <Button
-                fullWidth
-                startIcon={
-                  <DoneOutlineIcon className={classes.doneOutlineIcon} />
-                }
-              >
-                <Typography>Перевыполнено</Typography>
-              </Button>
-              <Button
-                fullWidth
-                startIcon={
-                  <ErrorIcon className={classes.ErrorIcon} color="error" />
-                }
-              >
-                <Typography>Не выполнено</Typography>
-              </Button>
+              </Collapse>
+              <Grid container justify="center">
+                <FormControlLabel
+                  style={
+                    description.length > 87
+                      ? { display: 'block' }
+                      : { display: 'none' }
+                  }
+                  control={
+                    <Checkbox
+                      checked={checked}
+                      onChange={handleChange}
+                      style={{ display: 'none' }}
+                    />
+                  }
+                  labelPlacement="top"
+                  label={
+                    <Typography variant="caption">
+                      {handleText()} описание
+                    </Typography>
+                  }
+                />
+              </Grid>
+            </Grid>
+            <Grid item xs={12} sm={12} md={4}>
+              <TaskButton />
             </Grid>
           </Grid>
         </Paper>

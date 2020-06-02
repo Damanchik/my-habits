@@ -9,7 +9,7 @@ export default makeStyles((theme: Theme) =>
       margin: theme.spacing(2),
     },
     moodBadIcon: {
-      color: 'yellow',
+      color: 'orange',
     },
     partiallyDone: {
       marginRight: 17,
@@ -22,8 +22,14 @@ export default makeStyles((theme: Theme) =>
       marginLeft: 27,
     },
     img: {
-      height: '100%',
+      height: '150px',
+      width: '100%',
       objectFit: 'cover',
+    },
+    typographyDescription: {
+      [theme.breakpoints.up('sm')]: {
+        textAlign: 'left',
+      },
     },
   })
 );
