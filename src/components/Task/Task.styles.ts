@@ -12,14 +12,18 @@ export default makeStyles((theme: Theme) =>
       color: 'yellow',
     },
     partiallyDone: {
-      marginRight: 20,
+      marginRight: 17,
     },
     doneOutlineIcon: {
-      marginLeft: 40,
+      marginLeft: 44,
       color: 'green',
     },
     ErrorIcon: {
-      marginLeft: 20,
+      marginLeft: 27,
+    },
+    img: {
+      height: '100%',
+      objectFit: 'cover',
     },
   })
 );

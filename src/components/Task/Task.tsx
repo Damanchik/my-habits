@@ -27,11 +27,7 @@ const Task = () => {
               sm={12}
               md={2}
             >
-              <img
-                src={runPic}
-                alt="картинка"
-                style={{ height: '100%', objectFit: 'cover' }}
-              />
+              <img src={runPic} alt="картинка" className={classes.img} />
             </Grid>
             <Grid
               item
