@@ -18,9 +18,6 @@ export default makeStyles((theme: Theme) =>
       marginLeft: 44,
       color: 'green',
     },
-    ErrorIcon: {
-      marginLeft: 27,
-    },
     img: {
       height: '150px',
       width: '100%',
@@ -29,6 +26,9 @@ export default makeStyles((theme: Theme) =>
     typographyDescription: {
       [theme.breakpoints.up('sm')]: {
         textAlign: 'left',
+      },
+      checkbox: {
+        display: 'none',
       },
     },
   })

@@ -28,7 +28,7 @@ const TaskButton = () => {
       </Button>
       <Button
         fullWidth
-        startIcon={<ErrorIcon className={classes.ErrorIcon} color="error" />}
+        startIcon={<ErrorIcon className={classes.errorIcon} color="error" />}
       >
         <Typography>Не выполнено</Typography>
       </Button>

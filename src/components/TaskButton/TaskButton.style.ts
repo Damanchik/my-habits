@@ -12,7 +12,7 @@ export default makeStyles(() =>
       marginLeft: 44,
       color: 'green',
     },
-    ErrorIcon: {
+    errorIcon: {
       marginLeft: 27,
     },
   })
