@@ -27,9 +27,6 @@ export default makeStyles((theme: Theme) =>
       [theme.breakpoints.up('sm')]: {
         textAlign: 'left',
       },
-      checkbox: {
-        display: 'none',
-      },
     },
   })
 );

@@ -11,8 +11,8 @@ const TasksPage = () => {
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
               eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget."
+              Suspendisse malesuada lacus ex, sit amet.malesuada lacus ex, sit amet
+              malesuada lacus ex, sit ametmalesuada lacus exфы"
         />
         <Task
           name="Прогулка по улице"
