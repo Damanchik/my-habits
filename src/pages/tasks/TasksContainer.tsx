@@ -6,6 +6,7 @@ import Hidden from '@material-ui/core/Hidden';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import Grid from '@material-ui/core/Grid';
+import { Link } from 'react-router-dom';
 import UseStyles from './TasksContainer.styles';
 import SideBar from '../../components/SideBar/SideBar';
 
@@ -54,14 +55,16 @@ const TasksContainer = ({ children }: TemplateProps) => {
       <Grid
         item
         container
-        justify="space-around"
+        justify="flex-start"
         className={classes.contentField}
       >
         {children}
       </Grid>
-      <Fab color="primary" className={classes.fab}>
-        <AddIcon />
-      </Fab>
+      <Link to="/tasks/add">
+        <Fab color="primary" className={classes.fab}>
+          <AddIcon />
+        </Fab>
+      </Link>
     </>
   );
 };

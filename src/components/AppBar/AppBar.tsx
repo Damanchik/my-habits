@@ -15,7 +15,7 @@ const AppBar = () => (
         </Grid>
         <Grid item>
           <Box pr={1} component="span">
-            <Link label="Войти" to="/login" color="inherit" />
+            <Link label="Войти" to="/" color="inherit" />
           </Box>
           <Link label="Зарегистрироваться" to="/registration" color="inherit" />
         </Grid>

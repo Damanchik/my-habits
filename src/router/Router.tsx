@@ -4,6 +4,7 @@ import HomePage from '../pages/home';
 import LoginPage from '../pages/login';
 import RegistrationPage from '../pages/registration';
 import TasksPage from '../pages/tasks/TasksPage';
+import NewTask from '../pages/tasks/add/NewTask';
 
 // @ts-ignore
 const Router = ({ navbar: NavBar }) => (
@@ -24,11 +25,11 @@ const Router = ({ navbar: NavBar }) => (
       <Route path="/logout">
         <div>LogOut</div>
       </Route>
+      <Route path="/tasks/add">
+        <NewTask />
+      </Route>
       <Route path="/tasks">
         <TasksPage />
-      </Route>
-      <Route path="/goals/add">
-        <div>Add goals</div>
       </Route>
       <Route path="/goals">
         <div>Goals</div>
