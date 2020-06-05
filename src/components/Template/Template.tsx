@@ -2,6 +2,7 @@ import React, { PropsWithChildren } from 'react';
 import { useMediaQuery, useTheme } from '@material-ui/core';
 import Drawer from '../Drawer';
 import Logo from '../Logo';
+import Divider from '@material-ui/core/Divider';
 import TemporaryAppBarAppBar from '../TemporaryAppBar';
 import MainMenu from '../MainMenu/MainMenu';
 
@@ -19,6 +20,7 @@ const Template = ({ children }: TemplateProps) => {
       <TemporaryAppBarAppBar />
       <Drawer>
         <Logo />
+        <Divider />
         {<MainMenu />}
       </Drawer>
       <main

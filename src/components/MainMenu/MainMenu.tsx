@@ -1,8 +1,8 @@
 import React from 'react';
 import ListItem from '@material-ui/core/ListItem';
 import List from '@material-ui/core/List';
-import InboxIcon from '@material-ui/core/Icon';
-import ListItemIcon from '@material-ui/core/Icon';
+import InboxIcon from '@material-ui/icons/Inbox';
+import ListItemIcon from '@material-ui/icons/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
@@ -85,5 +85,3 @@ const MainMenu = () => {
 };
 
 export default MainMenu;
-
-/* <AssignmentTurnedInIcon />*/
