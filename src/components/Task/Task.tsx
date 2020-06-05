@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
-import UseStyles from './Task.styles';
+import UseStyles from './Task.style';
 import TaskButton from '../TaskButton/TaskButtons';
 
 // @ts-ignore
