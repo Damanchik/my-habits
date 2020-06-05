@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import UseStyles from './Task.style';
-import TaskButton from '../TaskButton/TaskButtons';
+import TaskButton from '../TaskButtons/TaskButton';
 
 // @ts-ignore
 const Task = ({ description, name }) => {
