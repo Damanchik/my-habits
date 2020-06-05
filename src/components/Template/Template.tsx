@@ -3,6 +3,7 @@ import { useMediaQuery, useTheme } from '@material-ui/core';
 import Drawer from '../Drawer';
 import Logo from '../Logo';
 import TemporaryAppBarAppBar from '../TemporaryAppBar';
+import MainMenu from '../MainMenu/MainMenu';
 
 interface OtherProps {}
 
@@ -18,7 +19,7 @@ const Template = ({ children }: TemplateProps) => {
       <TemporaryAppBarAppBar />
       <Drawer>
         <Logo />
-        {}
+        {<MainMenu />}
       </Drawer>
       <main
         style={{

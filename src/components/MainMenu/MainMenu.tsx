@@ -2,7 +2,7 @@ import React from 'react';
 import ListItem from '@material-ui/core/ListItem';
 import List from '@material-ui/core/List';
 import InboxIcon from '@material-ui/core/Icon';
-import ListItemIcon from '@material-ui/core';
+import ListItemIcon from '@material-ui/core/Icon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
@@ -10,13 +10,20 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Input from '@material-ui/core/Input';
 import Typography from '@material-ui/core/Typography';
-import AssignmentTurnedInIcon from '@material-ui/core/Icon';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import UseStyles from './MainMenu.style';
 
 const MainMenu = () => {
   const classes = UseStyles();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <>
       <List className={classes.list}>
@@ -29,9 +36,7 @@ const MainMenu = () => {
           </ListItemText>
         </ListItem>
         <ListItem button>
-          <ListItemIcon>
-            <AssignmentTurnedInIcon />
-          </ListItemIcon>
+          <ListItemIcon></ListItemIcon>
           <ListItemText>
             <Typography>Успехи</Typography>
           </ListItemText>
@@ -80,3 +85,5 @@ const MainMenu = () => {
 };
 
 export default MainMenu;
+
+/* <AssignmentTurnedInIcon />*/
