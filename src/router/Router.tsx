@@ -4,6 +4,17 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import HomePage from '../pages/home';
 import LoginPage from '../pages/login';
 import RegistrationPage from '../pages/registration';
+import data from '../pages/tasks/stubs';
+import Task from '../components/Task/Task';
+
+const yourTasks = data.map(task => (
+  <Task
+    key={task.id}
+    name={task.name}
+    description={task.description}
+    imgUrl={task.imgUrl}
+  />
+));
 
 // @ts-ignore
 const Router = ({ navbar: NavBar, template: Template }) => (
@@ -26,9 +37,7 @@ const Router = ({ navbar: NavBar, template: Template }) => (
         <div>LogOut</div>
       </Route>
       <Route path="/tasks">
-        <Template>
-          <div>tasks </div>
-        </Template>
+        <Template>{yourTasks}</Template>
       </Route>
       <Route path="/goals/add">
         <div>Add goals</div>

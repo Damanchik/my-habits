@@ -2,7 +2,8 @@ import React from 'react';
 import ListItem from '@material-ui/core/ListItem';
 import List from '@material-ui/core/List';
 import InboxIcon from '@material-ui/icons/Inbox';
-import ListItemIcon from '@material-ui/icons/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
@@ -36,7 +37,9 @@ const MainMenu = () => {
           </ListItemText>
         </ListItem>
         <ListItem button>
-          <ListItemIcon></ListItemIcon>
+          <ListItemIcon>
+            <AssignmentTurnedInIcon />
+          </ListItemIcon>
           <ListItemText>
             <Typography>Успехи</Typography>
           </ListItemText>

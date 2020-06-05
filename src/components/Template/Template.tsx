@@ -26,7 +26,7 @@ const Template = ({ children }: TemplateProps) => {
       <main
         style={{
           marginLeft: isXs ? 0 : drawerWidth,
-          marginTop: isXs ? theme.mixins.toolbar.height : 0,
+          marginTop: isXs ? theme.spacing(9) : 0,
         }}
       >
         {children}

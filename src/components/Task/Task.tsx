@@ -6,7 +6,7 @@ import UseStyles from './Task.style';
 import TaskButton from '../TaskButtons/TaskButton';
 
 // @ts-ignore
-const Task = ({ description, name }) => {
+const Task = ({ description, name, imgUrl }) => {
   const classes = UseStyles();
 
   return (
@@ -23,11 +23,7 @@ const Task = ({ description, name }) => {
               sm={12}
               md={2}
             >
-              <img
-                src="http://placekitten.com/600/900"
-                alt="картинка"
-                className={classes.img}
-              />
+              <img src={imgUrl} alt="картинка" className={classes.img} />
             </Grid>
             <Grid item container direction="column" xs={12} sm={12} md={6}>
               <Typography gutterBottom variant="h6" align="center">
