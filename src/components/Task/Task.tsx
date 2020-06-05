@@ -9,8 +9,6 @@ import TaskButton from '../TaskButtons/TaskButton';
 const Task = ({ description, name }) => {
   const classes = UseStyles();
 
-  console.log(description.length);
-
   return (
     <>
       <Grid item xs={12} className={classes.paperContainer}>
