@@ -6,6 +6,7 @@ import LoginPage from '../pages/login';
 import RegistrationPage from '../pages/registration';
 import data from '../pages/tasks/stubs';
 import Task from '../components/Task/Task';
+import NewTask from '../components/NewTask/NewTask';
 
 const yourTasks = data.map(task => (
   <Task
@@ -36,11 +37,13 @@ const Router = ({ navbar: NavBar, template: Template }) => (
       <Route path="/logout">
         <div>LogOut</div>
       </Route>
+      <Route path="/tasks/add">
+        <Template>
+          <NewTask />
+        </Template>
+      </Route>
       <Route path="/tasks">
         <Template>{yourTasks}</Template>
-      </Route>
-      <Route path="/goals/add">
-        <div>Add goals</div>
       </Route>
       <Route path="/goals">
         <div>Goals</div>
