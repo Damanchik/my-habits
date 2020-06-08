@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Grid from '@material-ui/core/Grid';
 import Select from '@material-ui/core/Select';
@@ -9,11 +9,16 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import MenuItem from '@material-ui/core/MenuItem';
 import DoneAllIcon from '@material-ui/icons/DoneAll';
+import TextField from '@material-ui/core/TextField';
 import UseStyles from './NewTask.style';
 
 const NewTask = () => {
   const classes = UseStyles();
   const { register, handleSubmit, errors } = useForm();
+  const [type, setType] = useState('');
+  const handleChange = event => {
+    setType(event.target.value);
+  };
   const onSubmit = data => console.log(data);
   return (
     <>
@@ -37,38 +42,50 @@ const NewTask = () => {
                   <InputLabel htmlFor="task-type">Тип цели</InputLabel>
                   <Select
                     fullWidth
+                    name="type"
                     variant="outlined"
-                    defaultValue="Обычная"
-                    name="task-type"
                     inputRef={register}
+                    onChange={handleChange}
+                    defaultValue="Обычная"
                   >
-                    <MenuItem>Обычная</MenuItem>
-                    <MenuItem>С прогрессией</MenuItem>
+                    <MenuItem value="Обычная">Обычная</MenuItem>
+                    <MenuItem value="С прогрессией">С прогрессией</MenuItem>
                   </Select>
                 </Box>
               </Grid>
               <Grid item xs className={classes.grid}>
                 <Box>
                   <InputLabel htmlFor="task-type">Название цели</InputLabel>
-                  <Select fullWidth variant="outlined">
-                    <MenuItem>Обычная</MenuItem>
-                    <MenuItem>С прогрессией</MenuItem>
-                  </Select>
+                  <TextField
+                    variant="outlined"
+                    fullWidth
+                    name="name"
+                    inputRef={register}
+                  />
                 </Box>
               </Grid>
               <Grid container className={classes.grid} spacing={2}>
-                <Grid item xs={6}>
-                  <InputLabel htmlFor="task-type">Метрика</InputLabel>
-                  <Select fullWidth variant="outlined">
-                    <MenuItem>Обычная</MenuItem>
-                    <MenuItem>С прогрессией</MenuItem>
-                  </Select>
+                <Grid item xs={12} sm={6}>
+                  <InputLabel htmlFor="task-type">Количество</InputLabel>
+                  <TextField
+                    variant="outlined"
+                    fullWidth
+                    name="quantity"
+                    inputRef={register({
+                      pattern: {
+                        value: /[A-Za-z0-9]/,
+                        message: 'Введите число',
+                      },
+                    })}
+                    error={!!errors.quantity}
+                    helperText={errors.quantity && errors.quantity.message}
+                  />
                 </Grid>
-                <Grid item xs={6}>
-                  <InputLabel htmlFor="task-type">Метрика</InputLabel>
-                  <Select fullWidth variant="outlined">
-                    <MenuItem>Обычная</MenuItem>
-                    <MenuItem>С прогрессией</MenuItem>
+                <Grid item xs={12} sm={6}>
+                  <InputLabel htmlFor="unit">Ед.измерения</InputLabel>
+                  <Select fullWidth variant="outlined" defaultValue="раз">
+                    <MenuItem value="раз">раз</MenuItem>
+                    <MenuItem value="метров">метров</MenuItem>
                   </Select>
                 </Grid>
               </Grid>
@@ -77,6 +94,7 @@ const NewTask = () => {
                 variant="outlined"
                 color="primary"
                 endIcon={<DoneAllIcon />}
+                type="submit"
               >
                 Создать
               </Button>
@@ -89,59 +107,3 @@ const NewTask = () => {
 };
 
 export default NewTask;
-
-/*
-<Grid
-          item
-          container
-          justify="center"
-          alignItems="center"
-          xs={12}
-          sm={10}
-          md={8}
-          style={{ background: 'red' }}
-        >
-          <Paper className={classes.paper}>
-            <Grid
-              container
-              justify="flex-start"
-              direction="column"
-              alignItems="center"
-            >
-              <Grid item xs={12} style={{ background: 'blue' }}>
-                <Typography>Задай себе новую цель!</Typography>
-              </Grid>
-              <Grid item container style={{ background: 'green' }}>
-                <InputLabel htmlFor="task-type">Тип цели</InputLabel>
-                <Select autoWidth>
-                  <option>Обычная</option>
-                  <option>С прогрессией</option>
-                </Select>
-              </Grid>
-              <Grid
-                container
-                justify="space-around"
-                style={{ background: 'yellow' }}
-              >
-                <Box>
-                  <InputLabel htmlFor="task-type">Тип цели</InputLabel>
-                  <Select autoWidth>
-                    <option>Обычная</option>
-                    <option>С прогрессией</option>
-                  </Select>
-                </Box>
-                <Box>
-                  <InputLabel htmlFor="task-type">Тип цели</InputLabel>
-                  <Select autoWidth>
-                    <option>Обычная</option>
-                    <option>С прогрессией</option>
-                  </Select>
-                </Box>
-              </Grid>
-              <Grid style={{ background: 'pink' }}>
-                <Button>Создать</Button>
-              </Grid>
-            </Grid>
-          </Paper>
-        </Grid>
- */
