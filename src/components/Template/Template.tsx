@@ -1,8 +1,9 @@
 import React, { PropsWithChildren } from 'react';
 import { useMediaQuery, useTheme } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
+import Divider from '@material-ui/core/Divider';
 import Drawer from '../Drawer';
 import Logo from '../Logo';
-import Divider from '@material-ui/core/Divider';
 import TemporaryAppBarAppBar from '../TemporaryAppBar';
 import MainMenu from '../MainMenu/MainMenu';
 
@@ -19,9 +20,11 @@ const Template = ({ children }: TemplateProps) => {
     <>
       <TemporaryAppBarAppBar />
       <Drawer>
-        <Logo />
+        <Grid container justify="center">
+          <Logo />
+        </Grid>
         <Divider />
-        {<MainMenu />}
+        <MainMenu />
       </Drawer>
       <main
         style={{

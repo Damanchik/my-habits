@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ListItem from '@material-ui/core/ListItem';
 import List from '@material-ui/core/List';
 import InboxIcon from '@material-ui/icons/Inbox';
@@ -17,7 +17,7 @@ import UseStyles from './MainMenu.style';
 
 const MainMenu = () => {
   const classes = UseStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
   };
