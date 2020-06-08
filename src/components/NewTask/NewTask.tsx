@@ -16,10 +16,14 @@ const NewTask = () => {
   const classes = UseStyles();
   const { register, handleSubmit, errors } = useForm();
   const [type, setType] = useState('');
+  const [opened, setOpened] = useState(false);
+  const setOpen = () => setOpened(true);
+  const setClose = () => setOpened(false);
+  const onSubmit = data => console.log(data);
   const handleChange = event => {
     setType(event.target.value);
   };
-  const onSubmit = data => console.log(data);
+
   return (
     <>
       <Grid
@@ -39,7 +43,7 @@ const NewTask = () => {
               </Typography>
               <Grid item xs className={classes.grid}>
                 <Box>
-                  <InputLabel htmlFor="task-type">Тип цели</InputLabel>
+                  <InputLabel htmlFor="type">Тип цели</InputLabel>
                   <Select
                     fullWidth
                     name="type"
@@ -48,14 +52,18 @@ const NewTask = () => {
                     onChange={handleChange}
                     defaultValue="Обычная"
                   >
-                    <MenuItem value="Обычная">Обычная</MenuItem>
-                    <MenuItem value="С прогрессией">С прогрессией</MenuItem>
+                    <MenuItem value="Обычная" onClick={setClose}>
+                      Обычная
+                    </MenuItem>
+                    <MenuItem value="С прогрессией" onClick={setOpen}>
+                      С прогрессией
+                    </MenuItem>
                   </Select>
                 </Box>
               </Grid>
               <Grid item xs className={classes.grid}>
                 <Box>
-                  <InputLabel htmlFor="task-type">Название цели</InputLabel>
+                  <InputLabel htmlFor="task-name">Название цели</InputLabel>
                   <TextField
                     variant="outlined"
                     fullWidth
@@ -66,7 +74,7 @@ const NewTask = () => {
               </Grid>
               <Grid container className={classes.grid} spacing={2}>
                 <Grid item xs={12} sm={6}>
-                  <InputLabel htmlFor="task-type">Количество</InputLabel>
+                  <InputLabel htmlFor="quantity">Количество</InputLabel>
                   <TextField
                     variant="outlined"
                     fullWidth
@@ -83,12 +91,53 @@ const NewTask = () => {
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <InputLabel htmlFor="unit">Ед.измерения</InputLabel>
-                  <Select fullWidth variant="outlined" defaultValue="раз">
+                  <Select
+                    fullWidth
+                    variant="outlined"
+                    defaultValue="раз"
+                    name="unit"
+                  >
                     <MenuItem value="раз">раз</MenuItem>
                     <MenuItem value="метров">метров</MenuItem>
                   </Select>
                 </Grid>
               </Grid>
+              {opened && (
+                <Grid container className={classes.grid} spacing={2}>
+                  <Grid item xs={12} sm={6}>
+                    <InputLabel htmlFor="step">Шаг</InputLabel>
+                    <TextField
+                      variant="outlined"
+                      fullWidth
+                      name="step"
+                      inputRef={register({
+                        pattern: {
+                          value: /[A-Za-z0-9]/,
+                          message: 'Введите число',
+                        },
+                      })}
+                      error={!!errors.quantity}
+                      helperText={errors.quantity && errors.quantity.message}
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <InputLabel htmlFor="speed">Скорость</InputLabel>
+                    <TextField
+                      variant="outlined"
+                      fullWidth
+                      name="speed"
+                      inputRef={register({
+                        pattern: {
+                          value: /[A-Za-z0-9]/,
+                          message: 'Введите число',
+                        },
+                      })}
+                      error={!!errors.quantity}
+                      helperText={errors.quantity && errors.quantity.message}
+                    />
+                  </Grid>
+                </Grid>
+              )}
               <Button
                 size="large"
                 variant="outlined"
