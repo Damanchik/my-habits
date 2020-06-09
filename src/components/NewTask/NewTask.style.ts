@@ -18,5 +18,10 @@ export default makeStyles((theme: Theme) =>
     grid: {
       marginBottom: theme.spacing(4),
     },
+    textField: {
+      [theme.breakpoints.down('sm')]: {
+        marginBottom: theme.spacing(4),
+      },
+    },
   })
 );

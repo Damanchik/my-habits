@@ -9,6 +9,8 @@ import Button from '@material-ui/core/Button';
 import MenuItem from '@material-ui/core/MenuItem';
 import DoneAllIcon from '@material-ui/icons/DoneAll';
 import TextField from '@material-ui/core/TextField';
+import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
+import Tooltip from '@material-ui/core/Tooltip';
 import UseStyles from './NewTask.style';
 
 const NewTask = () => {
@@ -32,6 +34,7 @@ const NewTask = () => {
         xs={12}
         sm={10}
         md={8}
+        lg={6}
         className={classes.outerGrid}
       >
         <Paper className={classes.paper}>
@@ -64,7 +67,12 @@ const NewTask = () => {
                 </Controller>
               </Grid>
               <Grid item xs className={classes.grid}>
-                <InputLabel htmlFor="task-name">Название цели</InputLabel>
+                <Grid container justify="space-between">
+                  <InputLabel htmlFor="task-name">Название цели</InputLabel>
+                  <Tooltip title="Название цели стоит писать в инфинитиве, например: 'Гулять ежедневно в течение часа'">
+                    <HelpOutlineIcon fontSize="small" color="primary" />
+                  </Tooltip>
+                </Grid>
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -89,7 +97,7 @@ const NewTask = () => {
                   fullWidth
                   name="description"
                   inputRef={register({
-                    required: 'Напишите описание вашей цели',
+                    required: 'Опишите вашу цель',
                     maxLength: {
                       value: 300,
                       message: 'Максимум 300 символов',
@@ -114,6 +122,7 @@ const NewTask = () => {
                     })}
                     error={!!errors.quantity}
                     helperText={errors.quantity && errors.quantity.message}
+                    className={classes.textField}
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -146,6 +155,7 @@ const NewTask = () => {
                       })}
                       error={!!errors.increment}
                       helperText={errors.increment && errors.increment.message}
+                      className={classes.textField}
                     />
                   </Grid>
                   <Grid item xs={12} sm={6}>
