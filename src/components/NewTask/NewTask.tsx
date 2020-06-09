@@ -73,8 +73,12 @@ const NewTask = () => {
                     Название цели
                   </Typography>
                   <Tooltip
-                    title="Название цели стоит писать в повелительном наклонении,
-                  например: 'Гуляй ежедневно в течение часа'"
+                    title={
+                      <Typography variant="body2">
+                        Название цели стоит писать в повелительном наклонении,
+                        например: "Гуляй ежедневно в течение часа".
+                      </Typography>
+                    }
                   >
                     <HelpOutlineIcon fontSize="small" color="primary" />
                   </Tooltip>
