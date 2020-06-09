@@ -25,5 +25,9 @@ export default makeStyles((theme: Theme) =>
     input: {
       display: 'none',
     },
+    link: {
+      color: 'black',
+      textDecoration: 'none',
+    },
   })
 );

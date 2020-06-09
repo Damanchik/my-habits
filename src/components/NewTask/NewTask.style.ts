@@ -12,9 +12,6 @@ export default makeStyles((theme: Theme) =>
       width: '100%',
       padding: theme.spacing(2),
     },
-    typography: {
-      marginBottom: theme.spacing(3),
-    },
     grid: {
       marginBottom: theme.spacing(4),
     },

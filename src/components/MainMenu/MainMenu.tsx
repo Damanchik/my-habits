@@ -13,6 +13,7 @@ import Input from '@material-ui/core/Input';
 import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
+import { Link } from 'react-router-dom';
 import UseStyles from './MainMenu.style';
 
 const MainMenu = () => {
@@ -28,14 +29,16 @@ const MainMenu = () => {
   return (
     <>
       <List className={classes.list}>
-        <ListItem button>
-          <ListItemIcon>
-            <InboxIcon />
-          </ListItemIcon>
-          <ListItemText>
-            <Typography>Задания</Typography>
-          </ListItemText>
-        </ListItem>
+        <Link to="/tasks" className={classes.link}>
+          <ListItem button>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <ListItemText>
+              <Typography>Задания</Typography>
+            </ListItemText>
+          </ListItem>
+        </Link>
         <ListItem button>
           <ListItemIcon>
             <AssignmentTurnedInIcon />
