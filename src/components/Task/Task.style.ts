@@ -18,6 +18,9 @@ export default makeStyles((theme: Theme) =>
       marginLeft: 44,
       color: 'green',
     },
+    errorIcon: {
+      marginLeft: 27,
+    },
     img: {
       height: '150px',
       width: '100%',

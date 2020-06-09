@@ -7,10 +7,12 @@ import RegistrationPage from '../pages/registration';
 import data from '../pages/tasks/stubs';
 import Task from '../components/Task/Task';
 import NewTask from '../components/NewTask/NewTask';
+import PartiallyDoneForm from '../components/DoneForm/PartiallyDoneForm';
 
 const yourTasks = data.map(task => (
   <Task
     key={task.id}
+    pass={task.pass}
     name={task.name}
     description={task.description}
     imgUrl={task.imgUrl}
@@ -46,7 +48,7 @@ const Router = ({ navbar: NavBar, template: Template }) => (
         <Template>{yourTasks}</Template>
       </Route>
       <Route path="/goals">
-        <div>Goals</div>
+        <PartiallyDoneForm />
       </Route>
     </Switch>
   </BrowserRouter>

@@ -1,6 +1,7 @@
 const data = [
   {
     id: 1,
+    pass: '1',
     name: 'Отжаться 10 раз',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ' +
@@ -13,6 +14,7 @@ const data = [
   },
   {
     id: 2,
+    pass: '2',
     name: 'Поприседать 10 раз',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ' +
@@ -25,12 +27,14 @@ const data = [
   },
   {
     id: 3,
+    pass: '3',
     name: 'Бегать 100 км в день',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     imgUrl: 'http://placekitten.com/10/1000',
   },
   {
     id: 4,
+    pass: '4',
     name: 'Кушать овсянку по утрам',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ' +
