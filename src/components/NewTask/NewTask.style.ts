@@ -4,8 +4,8 @@ export default makeStyles((theme: Theme) =>
   createStyles({
     outerGrid: {
       [theme.breakpoints.up('sm')]: {
-        marginLeft: theme.spacing(5),
-        marginTop: theme.spacing(5),
+        paddingLeft: theme.spacing(5),
+        paddingTop: theme.spacing(5),
       },
     },
     paper: {
@@ -20,7 +20,7 @@ export default makeStyles((theme: Theme) =>
     },
     textField: {
       [theme.breakpoints.down('sm')]: {
-        marginBottom: theme.spacing(4),
+        marginBottom: theme.spacing(3),
       },
     },
   })
