@@ -67,6 +67,7 @@ const TaskButton = ({ pass }) => {
         marks={PartiallyMarksArray}
         open={openPartially}
         setOpen={setOpenPartially}
+        defaultValue={50}
       />
       <DoneForm
         pass={pass}
@@ -77,6 +78,7 @@ const TaskButton = ({ pass }) => {
         marks={OverDoneMarksArray}
         open={openOverDone}
         setOpen={setOpenOverDone}
+        defaultValue={150}
       />
     </>
   );

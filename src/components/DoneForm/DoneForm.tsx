@@ -16,8 +16,9 @@ const DoneForm = ({
   marks,
   open,
   setOpen,
+  defaultValue,
 }) => {
-  const [value, setValue] = useState(30);
+  const [value, setValue] = useState();
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -38,7 +39,7 @@ const DoneForm = ({
           <DialogContentText>{description}</DialogContentText>
           <Slider
             valueLabelDisplay="auto"
-            defaultValue={100}
+            defaultValue={defaultValue}
             step={1}
             marks={marks}
             min={min}

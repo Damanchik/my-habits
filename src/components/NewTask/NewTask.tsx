@@ -93,6 +93,10 @@ const NewTask = () => {
                       value: 3,
                       message: 'Минимум 3 символа',
                     },
+                    maxLength: {
+                      value: 30,
+                      message: 'Максимум 30 символов',
+                    },
                   })}
                   error={!!errors.name}
                   helperText={errors.name && errors.name.message}
