@@ -2,23 +2,8 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
-import TaskButton from '../TaskButtons/TaskButton';
-import Button from '@material-ui/core/Button';
-import CheckIcon from '@material-ui/icons/Check';
-import MoodBadIcon from '@material-ui/icons/MoodBad';
-import DoneOutlineIcon from '@material-ui/icons/DoneOutline';
-import ErrorIcon from '@material-ui/icons/Error';
 import UseStyles from './Task.style';
-
-/*
-interface TaskProps {
-  id: number;
-  name: string;
-  description: any;
-  imgUrl: any;
-}
-
- */
+import TaskButton from '../TaskButtons/TaskButton';
 
 const Task = ({ pass, name, description, imgUrl }) => {
   const classes = UseStyles();
@@ -53,42 +38,7 @@ const Task = ({ pass, name, description, imgUrl }) => {
               </Typography>
             </Grid>
             <Grid item xs={12} sm={12} md={4}>
-              <Button
-                type="submit"
-                fullWidth
-                startIcon={<CheckIcon color="primary" />}
-                onClick={() => console.log({ pass, type: 'Done' })}
-              >
-                <Typography>Выполнено</Typography>
-              </Button>
-              <Button
-                type="submit"
-                fullWidth
-                startIcon={<MoodBadIcon className={classes.moodBadIcon} />}
-              >
-                <Typography className={classes.partiallyDone}>
-                  Частично
-                </Typography>
-              </Button>
-              <Button
-                type="submit"
-                fullWidth
-                startIcon={
-                  <DoneOutlineIcon className={classes.doneOutlineIcon} />
-                }
-              >
-                <Typography>Перевыполнено</Typography>
-              </Button>
-              <Button
-                type="submit"
-                fullWidth
-                startIcon={
-                  <ErrorIcon className={classes.errorIcon} color="error" />
-                }
-                onClick={() => console.log({ pass, type: 'Fail' })}
-              >
-                <Typography>Не выполнено</Typography>
-              </Button>
+              <TaskButton pass={pass} />
             </Grid>
           </Grid>
         </Paper>
