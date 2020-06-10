@@ -5,7 +5,6 @@ import Typography from '@material-ui/core/Typography';
 import MoodBadIcon from '@material-ui/icons/MoodBad';
 import DoneOutlineIcon from '@material-ui/icons/DoneOutline';
 import ErrorIcon from '@material-ui/icons/Error';
-import Dialog from '@material-ui/core/Dialog';
 import UseStyles from './TaskButton.style';
 import DoneForm from '../DoneForm/DoneForm';
 import PartiallyMarksArray from '../DoneForm/PartiallyMarksArray';
@@ -19,16 +18,10 @@ const TaskButton = ({ pass }) => {
   const handleClickOpenPartially = () => {
     setOpenPartially(true);
   };
-  const handleClosePartially = () => {
-    setOpenPartially(false);
-  };
 
   const [openOverDone, setOpenOverDone] = useState(false);
   const handleClickOpenOverDone = () => {
     setOpenOverDone(true);
-  };
-  const handleCloseOverDone = () => {
-    setOpenOverDone(false);
   };
 
   return (
@@ -65,38 +58,26 @@ const TaskButton = ({ pass }) => {
       >
         <Typography>Не выполнено</Typography>
       </Button>
-      <Dialog open={openPartially} onClose={handleClosePartially}>
-        <DoneForm
-          pass={pass}
-          description="Отметьте на сколько процентов ваша цель была выполнена"
-          type="partially"
-          min={1}
-          max={99}
-          marks={PartiallyMarksArray}
-        >
-          <Button
-            onClick={handleClosePartially}
-            /*
-          Эту кнопку можно вставить, как кнопку Button с onClick и всё будет работать чётко, а можно вставить
-          Button как children напрямую в компонент и тоже будет работать чётко. Как лучше? И почему?
-           */
-          >
-            Закрыть
-          </Button>
-        </DoneForm>
-      </Dialog>
-      <Dialog open={openOverDone} onClose={handleCloseOverDone}>
-        <DoneForm
-          pass={pass}
-          description="Отметьте на сколько процентов ваша цель была перевыполнена"
-          type="overDone"
-          min={101}
-          max={200}
-          marks={OverDoneMarksArray}
-        >
-          <Button onClick={handleCloseOverDone}>Закрыть</Button>
-        </DoneForm>
-      </Dialog>
+      <DoneForm
+        pass={pass}
+        description="Отметьте на сколько процентов ваша цель была выполнена"
+        type="partially"
+        min={1}
+        max={99}
+        marks={PartiallyMarksArray}
+        open={openPartially}
+        setOpen={setOpenPartially}
+      />
+      <DoneForm
+        pass={pass}
+        description="Отметьте на сколько процентов ваша цель была перевыполнена"
+        type="overDone"
+        min={101}
+        max={200}
+        marks={OverDoneMarksArray}
+        open={openOverDone}
+        setOpen={setOpenOverDone}
+      />
     </>
   );
 };

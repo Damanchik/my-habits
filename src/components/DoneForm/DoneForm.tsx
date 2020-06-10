@@ -5,34 +5,52 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogActions from '@material-ui/core/DialogActions';
 import Slider from '@material-ui/core/Slider';
 import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
 
-const DoneForm = ({ pass, description, type, min, max, marks, children }) => {
+const DoneForm = ({
+  pass,
+  description,
+  type,
+  min,
+  max,
+  marks,
+  open,
+  setOpen,
+}) => {
   const [value, setValue] = useState(30);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleAccept = () => {
+    console.log({ pass, value, type });
+    setOpen(false);
+  };
+
   return (
     <>
-      <DialogTitle>Выполнение цели</DialogTitle>
-      <DialogContent>
-        <DialogContentText>{description}</DialogContentText>
-        <Slider
-          valueLabelDisplay="auto"
-          defaultValue={100}
-          step={1}
-          marks={marks}
-          min={min}
-          max={max}
-          onChange={handleChange}
-        />
-      </DialogContent>
-      <DialogActions>
-        <Button onClick={() => console.log({ pass, value, type })}>
-          Подтвердить
-        </Button>
-        {children}
-      </DialogActions>
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>Выполнение цели</DialogTitle>
+        <DialogContent>
+          <DialogContentText>{description}</DialogContentText>
+          <Slider
+            valueLabelDisplay="auto"
+            defaultValue={100}
+            step={1}
+            marks={marks}
+            min={min}
+            max={max}
+            onChange={handleChange}
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleAccept}>Подтвердить</Button>
+          <Button onClick={handleClose}>Закрыть</Button>
+        </DialogActions>
+      </Dialog>
     </>
   );
 };
