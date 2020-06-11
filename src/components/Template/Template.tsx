@@ -2,9 +2,6 @@ import React, { PropsWithChildren } from 'react';
 import { useMediaQuery, useTheme } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
-import { Link } from 'react-router-dom';
-import AddIcon from '@material-ui/icons/Add';
-import Fab from '@material-ui/core/Fab';
 import Drawer from '../Drawer';
 import Logo from '../Logo';
 import TemporaryAppBarAppBar from '../TemporaryAppBar';
@@ -39,11 +36,6 @@ const Template = ({ children }: TemplateProps) => {
       >
         {children}
       </main>
-      <Link to="/tasks/add">
-        <Fab color="primary" className={classes.fab}>
-          <AddIcon />
-        </Fab>
-      </Link>
     </>
   );
 };
