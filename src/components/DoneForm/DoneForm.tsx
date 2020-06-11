@@ -18,7 +18,7 @@ const DoneForm = ({
   setOpen,
   defaultValue,
 }) => {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState(defaultValue);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
