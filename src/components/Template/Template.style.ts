@@ -10,5 +10,9 @@ export default makeStyles((theme: Theme) =>
       bottom: theme.spacing(4),
       right: theme.spacing(4),
     },
+    grid: {
+      marginTop: theme.spacing(2),
+      marginBottom: theme.spacing(2),
+    },
   })
 );

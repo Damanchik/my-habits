@@ -25,7 +25,7 @@ const Template = ({ children }: TemplateProps) => {
     <>
       <TemporaryAppBarAppBar />
       <Drawer>
-        <Grid container justify="center">
+        <Grid container justify="center" className={classes.grid}>
           <Logo />
         </Grid>
         <Divider />
