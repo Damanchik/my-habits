@@ -7,5 +7,8 @@ export default makeStyles((theme: Theme) =>
       bottom: theme.spacing(4),
       right: theme.spacing(4),
     },
+    typography: {
+      padding: 16,
+    },
   })
 );

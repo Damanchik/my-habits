@@ -4,8 +4,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import HomePage from '../pages/home';
 import LoginPage from '../pages/login';
 import RegistrationPage from '../pages/registration';
-import NewTask from '../components/NewTask/NewTask';
 import TasksPage from '../pages/tasks/TasksPage';
+import NewTaskPage from '../pages/tasks/add/NewTaskPage';
 
 // @ts-ignore
 const Router = ({ navbar: NavBar, template: Template }) => (
@@ -28,9 +28,7 @@ const Router = ({ navbar: NavBar, template: Template }) => (
         <div>LogOut</div>
       </Route>
       <Route path="/tasks/add">
-        <Template>
-          <NewTask />
-        </Template>
+        <NewTaskPage />
       </Route>
       <Route path="/tasks">
         <TasksPage />

@@ -19,7 +19,6 @@ const Task = ({ pass, name, description, imgUrl }) => {
               justify="center"
               alignItems="flex-start"
               xs={12}
-              sm={12}
               md={2}
             >
               <img src={imgUrl} alt="картинка" className={classes.img} />

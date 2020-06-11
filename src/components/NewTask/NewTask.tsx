@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import MenuItem from '@material-ui/core/MenuItem';
-import DoneAllIcon from '@material-ui/icons/DoneAll';
+import CheckIcon from '@material-ui/icons/Check';
 import TextField from '@material-ui/core/TextField';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import Tooltip from '@material-ui/core/Tooltip';
@@ -76,7 +76,7 @@ const NewTask = () => {
                     title={
                       <Typography variant="body2">
                         Название цели стоит писать в повелительном наклонении,
-                        например: "Гуляй ежедневно в течение часа".
+                        например: 'Гуляй ежедневно в течение часа'.
                       </Typography>
                     }
                   >
@@ -202,7 +202,7 @@ const NewTask = () => {
                 size="large"
                 variant="outlined"
                 color="primary"
-                endIcon={<DoneAllIcon />}
+                endIcon={<CheckIcon />}
                 type="submit"
               >
                 Создать
