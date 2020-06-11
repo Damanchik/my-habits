@@ -24,7 +24,7 @@ const TasksPage = () => {
     <>
       <Template>
         <Typography variant="h4" className={classes.typography}>
-          Ваши задания:
+          Задания
         </Typography>
         {yourTasks}
       </Template>
