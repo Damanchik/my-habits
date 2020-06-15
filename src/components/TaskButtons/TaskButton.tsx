@@ -30,7 +30,7 @@ const TaskButton = ({ pass }) => {
         type="submit"
         fullWidth
         startIcon={<CheckIcon color="primary" />}
-        onClick={() => console.log({ pass, type: 'Done' })}
+        onClick={() => console.log({ pass, isDone: 'Done' })}
       >
         <Typography>Выполнено</Typography>
       </Button>
@@ -54,14 +54,14 @@ const TaskButton = ({ pass }) => {
         type="submit"
         fullWidth
         startIcon={<ErrorIcon className={classes.errorIcon} color="error" />}
-        onClick={() => console.log({ pass, type: 'Fail' })}
+        onClick={() => console.log({ pass, isDone: 'Fail' })}
       >
         <Typography>Не выполнено</Typography>
       </Button>
       <DoneForm
         pass={pass}
         description="Отметьте на сколько процентов ваша цель была выполнена"
-        type="partially"
+        isDone="partially"
         min={1}
         max={99}
         marks={PartiallyMarksArray}
@@ -72,7 +72,7 @@ const TaskButton = ({ pass }) => {
       <DoneForm
         pass={pass}
         description="Отметьте на сколько процентов ваша цель была перевыполнена"
-        type="overDone"
+        isDone="overDone"
         min={101}
         max={200}
         marks={OverDoneMarksArray}

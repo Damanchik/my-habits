@@ -5,9 +5,6 @@ export default makeStyles((theme: Theme) =>
     paper: {
       padding: theme.spacing(2),
     },
-    paperContainer: {
-      padding: theme.spacing(1),
-    },
     moodBadIcon: {
       color: 'orange',
     },

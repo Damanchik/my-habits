@@ -34,7 +34,9 @@ const Template = ({ children }: TemplateProps) => {
           marginTop: isXs ? theme.spacing(9) : 0,
         }}
       >
-        {children}
+        <Grid container justify="center">
+          {children}
+        </Grid>
       </main>
     </>
   );

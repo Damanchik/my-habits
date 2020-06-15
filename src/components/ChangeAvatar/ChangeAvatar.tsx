@@ -1,3 +1,5 @@
+//* Будущий компонент для изменения аватарки. На данный момент не включен в проект и предназначен для практики.
+
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';

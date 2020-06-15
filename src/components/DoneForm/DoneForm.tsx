@@ -10,7 +10,7 @@ import Dialog from '@material-ui/core/Dialog';
 const DoneForm = ({
   pass,
   description,
-  type,
+  isDone,
   min,
   max,
   marks,
@@ -27,7 +27,7 @@ const DoneForm = ({
     setOpen(false);
   };
   const handleAccept = () => {
-    console.log({ pass, value, type });
+    console.log({ pass, value, isDone });
     setOpen(false);
   };
 

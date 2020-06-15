@@ -27,14 +27,16 @@ const MainMenu = () => {
             </ListItemText>
           </ListItem>
         </Link>
-        <ListItem button>
-          <ListItemIcon>
-            <AssignmentTurnedInIcon />
-          </ListItemIcon>
-          <ListItemText>
-            <Typography>Успехи</Typography>
-          </ListItemText>
-        </ListItem>
+        <Link to="/success" className={classes.link}>
+          <ListItem button>
+            <ListItemIcon>
+              <AssignmentTurnedInIcon />
+            </ListItemIcon>
+            <ListItemText>
+              <Typography>Успехи</Typography>
+            </ListItemText>
+          </ListItem>
+        </Link>
       </List>
       <Divider />
       <AvatarBox />

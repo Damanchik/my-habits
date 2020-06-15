@@ -1,12 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import AddIcon from '@material-ui/icons/Add';
-import Fab from '@material-ui/core/Fab';
 import Typography from '@material-ui/core/Typography';
 import data from './stubs';
 import Task from '../../components/Task/Task';
 import Template from '../../components/Template';
 import UseStyles from './TasksPage.style';
+import FabNewTask from '../../components/FabNewTask/FabNewTask';
 
 const yourTasks = data.map(task => (
   <Task
@@ -23,16 +21,12 @@ const TasksPage = () => {
   return (
     <>
       <Template>
-        <Typography variant="h4" className={classes.typography}>
+        <Typography display="block" variant="h4" className={classes.typography}>
           Задания
         </Typography>
         {yourTasks}
       </Template>
-      <Link to="/tasks/add">
-        <Fab color="primary" className={classes.fab}>
-          <AddIcon />
-        </Fab>
-      </Link>
+      <FabNewTask />
     </>
   );
 };
