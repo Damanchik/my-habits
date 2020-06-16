@@ -10,7 +10,14 @@ const Task = ({ pass, name, description, imgUrl }) => {
 
   return (
     <>
-      <Grid item xs={12} sm={10} md={11} lg={11}>
+      <Grid
+        item
+        xs={12}
+        sm={10}
+        md={11}
+        lg={11}
+        className={classes.paperContainer}
+      >
         <Paper className={classes.paper}>
           <Grid container justify="flex-start" spacing={1}>
             <Grid
