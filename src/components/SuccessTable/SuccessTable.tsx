@@ -25,7 +25,7 @@ const successList = rows.map(row => (
         : { background: 'red' }
     }
   >
-    <TableCell>
+    <TableCell align="center">
       {row.type === 'С прогрессией' ? <ShowChartIcon /> : <AccessAlarmIcon />}
     </TableCell>
     <TableCell>{row.name}</TableCell>
