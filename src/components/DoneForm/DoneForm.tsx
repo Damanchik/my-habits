@@ -17,6 +17,7 @@ const DoneForm = ({
   open,
   setOpen,
   defaultValue,
+  currentDate,
 }) => {
   const [value, setValue] = useState(defaultValue);
   const handleChange = (event, newValue) => {
@@ -27,7 +28,7 @@ const DoneForm = ({
     setOpen(false);
   };
   const handleAccept = () => {
-    console.log({ pass, value, isDone });
+    console.log({ pass, value, isDone, currentDate });
     setOpen(false);
   };
 

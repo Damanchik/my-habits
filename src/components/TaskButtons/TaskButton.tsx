@@ -24,13 +24,16 @@ const TaskButton = ({ pass }) => {
     setOpenOverDone(true);
   };
 
+  const date = new Date();
+  const currentDate = date.toLocaleDateString();
+
   return (
     <>
       <Button
         type="submit"
         fullWidth
         startIcon={<CheckIcon color="primary" />}
-        onClick={() => console.log({ pass, isDone: 'Done' })}
+        onClick={() => console.log({ pass, isDone: 'Done', date: currentDate })}
       >
         <Typography>Выполнено</Typography>
       </Button>
@@ -54,7 +57,7 @@ const TaskButton = ({ pass }) => {
         type="submit"
         fullWidth
         startIcon={<ErrorIcon className={classes.errorIcon} color="error" />}
-        onClick={() => console.log({ pass, isDone: 'Fail' })}
+        onClick={() => console.log({ pass, isDone: 'Fail', date: currentDate })}
       >
         <Typography>Не выполнено</Typography>
       </Button>
@@ -68,6 +71,7 @@ const TaskButton = ({ pass }) => {
         open={openPartially}
         setOpen={setOpenPartially}
         defaultValue={50}
+        currentDate={currentDate}
       />
       <DoneForm
         pass={pass}
@@ -79,6 +83,7 @@ const TaskButton = ({ pass }) => {
         open={openOverDone}
         setOpen={setOpenOverDone}
         defaultValue={150}
+        currentDate={currentDate}
       />
     </>
   );

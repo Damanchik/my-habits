@@ -3,7 +3,7 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 export default makeStyles(() =>
   createStyles({
     moodBadIcon: {
-      color: 'orange',
+      color: 'rgb(255, 192, 0)',
     },
     partiallyDone: {
       marginRight: 17,
