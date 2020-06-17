@@ -30,6 +30,7 @@ export default makeStyles((theme: Theme) =>
     typographyDescription: {
       [theme.breakpoints.up('sm')]: {
         textAlign: 'left',
+        paddingLeft: theme.spacing(1),
       },
     },
   })

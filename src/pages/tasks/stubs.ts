@@ -4,12 +4,10 @@ const data = [
     pass: '1',
     name: 'Отжаться 10 раз',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ' +
-      'malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum ' +
-      'dolor sit amet, consectetur adipiscing elit Suspendisse malesuada ' +
-      'lacus ex, sit amet.malesuada lacus ex, sit amet + malesuada lacus ex, ' +
-      'sit ametmalesuada lacus exфы consectetur adipiscing elit Suspendisse ' +
-      'malesuada lacus ex, sit amet.malesuada lacus ex, sit amet + malesuada',
+      'Это работает превосходно когда изменения могут быть изолированы в новый DOM элемент. Для сущности, вы можете ' +
+      'изменить margin(внешний отступ) таким образом.' +
+      'Тем не менее, иногда вам нужно ориентироваться на базовый элемент DOM. Например, вы хотите изменить цвет ' +
+      'текста кнопки. Компонент Button опреде.',
     imgUrl: 'http://placekitten.com/600/900',
   },
   {
@@ -17,19 +15,18 @@ const data = [
     pass: '2',
     name: 'Поприседать 10 раз',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ' +
-      'malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum ' +
-      'dolor sit amet, consectetur adipiscing elit Suspendisse malesuada ' +
-      'lacus ex, sit amet.malesuada lacus ex, sit amet + malesuada lacus ex, ' +
-      'sit ametmalesuada lacus exфы consectetur adipiscing elit Suspendisse ' +
-      'malesuada lacus ex, sit amet.malesuada lacus ex, sit amet + malesuada',
+      'Это работает превосходно когда изменения могут быть изолированы в новый DOM элемент',
     imgUrl: 'http://placekitten.com/1000/10',
   },
   {
     id: 3,
     pass: '3',
     name: 'Бегать 100 км в день',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    description:
+      'Это работает превосходно когда изменения могут быть изолированы в новый DOM элемент. ' +
+      'Для сущности, вы можете изменить margin(внешний отступ) таким образом.' +
+      'Тем не менее, иногда вам нужно ориентироваться на базовый элемент DOM. Например, вы хотите изменить ' +
+      'цвет текста кнопки. Компонент Button опреде.',
     imgUrl: 'http://placekitten.com/10/1000',
   },
   {
@@ -37,18 +34,8 @@ const data = [
     pass: '4',
     name: 'Кушать овсянку по утрам',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ' +
-      'malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum ' +
-      'dolor sit amet, consectetur adipiscing elit Suspendisse malesuada ' +
-      'lacus ex, sit amet.malesuada lacus ex, sit amet + malesuada lacus ex, ' +
-      'sit ametmalesuada lacus exфы consectetur adipiscing elit Suspendisse ' +
-      'malesuada lacus ex, sit amet.malesuada lacus ex, sit amet + malesuada' +
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ' +
-      'malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum ' +
-      'dolor sit amet, consectetur adipiscing elit Suspendisse malesuada ' +
-      'lacus ex, sit amet.malesuada lacus ex, sit amet + malesuada lacus ex, ' +
-      'sit ametmalesuada lacus exфы consectetur adipiscing elit Suspendisse ' +
-      'malesuada lacus ex, sit amet.malesuada lacus ex, sit amet + malesuada',
+      'Это работает превосходно когда изменения могут быть изолированы в новый DOM элемент. Для сущности, вы можете изменить margin(внешний отступ) таким образом.' +
+      'Тем не менее, иногда вам нужно ориентироваться на базовый элемент DOM. Например, вы хотите изменить цвет текста кнопки. Компонент Button опреде.',
     imgUrl: 'http://placekitten.com/10/1000',
   },
 ];

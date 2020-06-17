@@ -27,10 +27,19 @@ const Task = ({ pass, name, description, imgUrl }) => {
               alignItems="flex-start"
               xs={12}
               md={2}
+              lg={2}
             >
               <img src={imgUrl} alt="картинка" className={classes.img} />
             </Grid>
-            <Grid item container direction="column" xs={12} sm={12} md={6}>
+            <Grid
+              item
+              container
+              direction="column"
+              xs={12}
+              sm={12}
+              md={6}
+              lg={7}
+            >
               <Typography gutterBottom variant="h6" align="center">
                 {name}
               </Typography>
@@ -43,7 +52,7 @@ const Task = ({ pass, name, description, imgUrl }) => {
                 {description}
               </Typography>
             </Grid>
-            <Grid item xs={12} sm={12} md={4}>
+            <Grid item xs={12} sm={12} md={4} lg={3}>
               <TaskButton pass={pass} />
             </Grid>
           </Grid>

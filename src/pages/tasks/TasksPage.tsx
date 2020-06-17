@@ -21,7 +21,11 @@ const TasksPage = () => {
   return (
     <>
       <Template>
-        <Typography display="block" variant="h4" className={classes.typography}>
+        <Typography
+          display="initial"
+          variant="h4"
+          className={classes.typography}
+        >
           Задания
         </Typography>
         {yourTasks}
