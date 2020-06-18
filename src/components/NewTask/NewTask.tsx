@@ -147,7 +147,7 @@ const NewTask = () => {
                   </Typography>
                   <Controller
                     as={<Select fullWidth variant="outlined" />}
-                    name="unit"
+                    name="measure"
                     control={control}
                     defaultValue="раз"
                   >
@@ -179,9 +179,21 @@ const NewTask = () => {
                     />
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <Typography variant="body1" color="textSecondary">
-                      Скорость
-                    </Typography>
+                    <Grid container justify="space-between">
+                      <Typography variant="body1" color="textSecondary">
+                        Скорость изменения
+                      </Typography>
+                      <Tooltip
+                        title={
+                          <Typography variant="body2">
+                            Скорость изменения показывает через сколько дней
+                            ваша цель станет выше на выбранный вами шаг.
+                          </Typography>
+                        }
+                      >
+                        <HelpOutlineIcon fontSize="small" color="primary" />
+                      </Tooltip>
+                    </Grid>
                     <TextField
                       variant="outlined"
                       fullWidth
