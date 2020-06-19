@@ -15,7 +15,7 @@ import UseStyles from './NewTask.style';
 const NewTask = () => {
   const classes = UseStyles();
   const { register, handleSubmit, errors, control } = useForm();
-  const [type, setType] = useState('');
+  const [, setType] = useState('');
   const [opened, setOpened] = useState(false);
   const setOpen = () => setOpened(true);
   const setClose = () => setOpened(false);

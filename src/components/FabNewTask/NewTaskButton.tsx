@@ -2,9 +2,9 @@ import React from 'react';
 import AddIcon from '@material-ui/icons/Add';
 import Fab from '@material-ui/core/Fab';
 import { Link } from 'react-router-dom';
-import UseStyles from './FabNewTask.style';
+import UseStyles from './NewTaskButton.style';
 
-const FabNewTask = () => {
+const NewTaskButton = () => {
   const classes = UseStyles();
   return (
     <Link to="/tasks/add">
@@ -15,4 +15,4 @@ const FabNewTask = () => {
   );
 };
 
-export default FabNewTask;
+export default NewTaskButton;

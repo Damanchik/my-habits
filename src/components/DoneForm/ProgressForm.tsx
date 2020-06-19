@@ -7,7 +7,7 @@ import Slider from '@material-ui/core/Slider';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 
-const DoneForm = ({
+const ProgressForm = ({
   pass,
   description,
   isDone,
@@ -57,4 +57,4 @@ const DoneForm = ({
   );
 };
 
-export default DoneForm;
+export default ProgressForm;

@@ -6,7 +6,7 @@ import MoodBadIcon from '@material-ui/icons/MoodBad';
 import DoneOutlineIcon from '@material-ui/icons/DoneOutline';
 import ErrorIcon from '@material-ui/icons/Error';
 import UseStyles from './TaskButton.style';
-import DoneForm from '../DoneForm/DoneForm';
+import ProgressForm from '../DoneForm/ProgressForm';
 import PartiallyMarksArray from '../DoneForm/PartiallyMarksArray';
 import OverDoneMarksArray from '../DoneForm/OverDoneMarksArray';
 
@@ -61,7 +61,7 @@ const TaskButton = ({ pass }) => {
       >
         <Typography>Не выполнено</Typography>
       </Button>
-      <DoneForm
+      <ProgressForm
         pass={pass}
         description="Отметьте на сколько процентов ваша цель была выполнена"
         isDone="partially"
@@ -73,7 +73,7 @@ const TaskButton = ({ pass }) => {
         defaultValue={50}
         currentDate={currentDate}
       />
-      <DoneForm
+      <ProgressForm
         pass={pass}
         description="Отметьте на сколько процентов ваша цель была перевыполнена"
         isDone="overDone"

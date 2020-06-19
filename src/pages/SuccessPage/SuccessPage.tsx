@@ -2,7 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Template from '../../components/Template';
 import SuccessTable from '../../components/SuccessTable/SuccessTable';
-import FabNewTask from '../../components/FabNewTask/FabNewTask';
+import NewTaskButton from '../../components/FabNewTask/NewTaskButton';
 import UseStyles from './SuccessPage.style';
 
 const SuccessPage = () => {
@@ -14,7 +14,7 @@ const SuccessPage = () => {
           Ваши успехи
         </Typography>
         <SuccessTable />
-        <FabNewTask />
+        <NewTaskButton />
       </Template>
     </>
   );

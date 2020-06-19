@@ -4,7 +4,7 @@ import data from './stubs';
 import Task from '../../components/Task/Task';
 import Template from '../../components/Template';
 import UseStyles from './TasksPage.style';
-import FabNewTask from '../../components/FabNewTask/FabNewTask';
+import NewTaskButton from '../../components/FabNewTask/NewTaskButton';
 
 const yourTasks = data.map(task => (
   <Task
@@ -30,7 +30,7 @@ const TasksPage = () => {
         </Typography>
         {yourTasks}
       </Template>
-      <FabNewTask />
+      <NewTaskButton />
     </>
   );
 };
