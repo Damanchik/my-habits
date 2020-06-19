@@ -94,8 +94,8 @@ const NewTask = () => {
                       message: 'Минимум 3 символа',
                     },
                     maxLength: {
-                      value: 30,
-                      message: 'Максимум 30 символов',
+                      value: 350,
+                      message: 'Максимум 350 символов',
                     },
                   })}
                   error={!!errors.name}
@@ -113,8 +113,8 @@ const NewTask = () => {
                   inputRef={register({
                     required: 'Опишите вашу цель',
                     maxLength: {
-                      value: 300,
-                      message: 'Максимум 300 символов',
+                      value: 500,
+                      message: 'Максимум 500 символов',
                     },
                   })}
                   error={!!errors.description}
