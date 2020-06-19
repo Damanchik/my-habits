@@ -4,7 +4,7 @@ import data from './stubs';
 import Task from '../../components/Task/Task';
 import Template from '../../components/Template';
 import UseStyles from './TasksPage.style';
-import NewTaskButton from '../../components/FabNewTask/NewTaskButton';
+import NewTaskButton from '../../components/NewTaskButton/NewTaskButton';
 
 const yourTasks = data.map(task => (
   <Task
