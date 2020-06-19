@@ -128,6 +128,7 @@ const NewTask = () => {
                   </Typography>
                   <TextField
                     variant="outlined"
+                    type="number"
                     fullWidth
                     name="quantity"
                     inputRef={register({
@@ -166,6 +167,7 @@ const NewTask = () => {
                     <TextField
                       variant="outlined"
                       fullWidth
+                      type="number"
                       name="increment"
                       inputRef={register({
                         pattern: {
@@ -197,6 +199,7 @@ const NewTask = () => {
                     <TextField
                       variant="outlined"
                       fullWidth
+                      type="number"
                       name="speed"
                       inputRef={register({
                         pattern: {

@@ -13,31 +13,18 @@ import Typography from '@material-ui/core/Typography';
 import UseStyles from './SuccessTable.style';
 import rows from './stubs';
 
-const successList = rows.map(row => (
-  <TableRow
-    selected
-    key={row.id}
-    style={
-      row.isDone === 'Выполнено'
-        ? { background: 'rgb(24, 184, 83)' }
-        : row.isDone === 'Перевыполнено'
-        ? { background: 'rgb(96, 255, 255)' }
-        : row.isDone === 'Частично'
-        ? { background: 'rgb(255, 166, 42)' }
-        : { background: 'red' }
-    }
-  >
-    <TableCell align="center">
-      {row.type === 'С прогрессией' ? <ShowChartIcon /> : <AccessAlarmIcon />}
-    </TableCell>
-    <TableCell>
-      <Typography variant="h6">{row.name}</Typography>
-    </TableCell>
-    <TableCell>
-      <Typography variant="h6">{row.date}</Typography>
-    </TableCell>
-  </TableRow>
-));
+const renderSwitch = (condition: string) => {
+  switch (condition) {
+    case 'Выполнено':
+      return { background: 'rgb(235, 248, 236)' };
+    case 'Перевыполнено':
+      return { background: 'rgb(231, 244, 254)' };
+    case 'Частично':
+      return { background: 'rgb(255, 244, 228)' };
+    default:
+      return { background: 'rgb(255, 235, 234)' };
+  }
+};
 
 const SuccessTable = () => {
   const classes = UseStyles();
@@ -50,7 +37,9 @@ const SuccessTable = () => {
             <TableHead>
               <TableRow>
                 <TableCell>
-                  <Typography variant="h6">Тип</Typography>
+                  <Typography variant="h6" align="center">
+                    Тип
+                  </Typography>
                 </TableCell>
                 <TableCell>
                   <Typography variant="h6">Название</Typography>
@@ -60,7 +49,29 @@ const SuccessTable = () => {
                 </TableCell>
               </TableRow>
             </TableHead>
-            <TableBody>{successList}</TableBody>
+            <TableBody>
+              {rows.map(row => (
+                <TableRow
+                  selected
+                  key={row.id}
+                  style={renderSwitch(row.isDone)}
+                >
+                  <TableCell align="center">
+                    {row.type === 'С прогрессией' ? (
+                      <ShowChartIcon />
+                    ) : (
+                      <AccessAlarmIcon />
+                    )}
+                  </TableCell>
+                  <TableCell>
+                    <Typography variant="h6">{row.name}</Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography variant="h6">{row.date}</Typography>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
           </Table>
         </TableContainer>
       </Grid>
