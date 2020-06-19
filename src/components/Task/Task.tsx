@@ -33,13 +33,17 @@ const Task = ({ pass, name, description, imgUrl }) => {
               md={6}
               lg={7}
             >
-              <Typography gutterBottom variant="h6" align="center">
+              <Typography
+                gutterBottom
+                variant="h6"
+                align="left"
+                className={classes.typographyHeader}
+              >
                 {name}
               </Typography>
               <Typography
                 id="description"
                 variant="body2"
-                align="center"
                 className={classes.typographyDescription}
               >
                 {description}

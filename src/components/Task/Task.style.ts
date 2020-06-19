@@ -28,10 +28,13 @@ export default makeStyles((theme: Theme) =>
       objectFit: 'cover',
     },
     typographyDescription: {
+      textAlign: 'left',
       [theme.breakpoints.up('sm')]: {
-        textAlign: 'left',
         paddingLeft: theme.spacing(1),
       },
+    },
+    typographyHeader: {
+      paddingLeft: theme.spacing(1),
     },
   })
 );
